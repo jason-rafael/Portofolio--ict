@@ -131,6 +131,95 @@
       transform: translateY(-4px);
     }
 
+    @media (max-width: 1024px) {
+      #nav-menu-container .grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      }
+
+      #nav-menu-container a {
+        font-size: 0.62rem !important;
+        padding-left: 0.65rem !important;
+        padding-right: 0.65rem !important;
+      }
+    }
+
+    @media (max-width: 767px) {
+      body {
+        background-attachment: scroll;
+      }
+
+      header {
+        top: 0.75rem !important;
+      }
+
+      nav {
+        padding: 0.75rem !important;
+      }
+
+      #nav-menu-container {
+        width: 100%;
+      }
+
+      #nav-menu-container .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        width: 100%;
+      }
+
+      #nav-menu-container a {
+        min-width: 0;
+        font-size: 0.68rem !important;
+      }
+
+      .nav-action-group {
+        width: 100%;
+      }
+
+      .nav-action-group > button {
+        flex: 1 1 0;
+        min-width: 0;
+      }
+
+      .alpine-card {
+        border-radius: 18px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .max-w-7xl {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+      }
+
+      #nav-menu-container .grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      #nav-menu-container a {
+        font-size: 0.62rem !important;
+        letter-spacing: 0.04em;
+      }
+
+      #hero h1 {
+        font-size: clamp(2rem, 7vw, 2.7rem) !important;
+        line-height: 1.1;
+      }
+
+      #hero p {
+        font-size: 0.8rem !important;
+      }
+
+      #theme-toggle-btn,
+      .login-button,
+      #collab-submit-btn,
+      #display-website-cta {
+        width: 100% !important;
+      }
+
+      .marquee-track a {
+        padding: 0.6rem 0.8rem !important;
+      }
+    }
+
     @keyframes mountainFloat {
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-6px); }
@@ -245,7 +334,7 @@
       </div>
 
       <!-- Tombol Aksi (Tema & CMS Admin Login) -->
-      <div class="flex items-center justify-center gap-2 shrink-0 w-full md:w-auto pt-2 md:pt-0 border-t md:border-t-0 border-slate-200 dark:border-slate-800">
+      <div class="nav-action-group flex items-center justify-center gap-2 shrink-0 w-full md:w-auto pt-2 md:pt-0 border-t md:border-t-0 border-slate-200 dark:border-slate-800">
         <button onclick="toggleTheme()" id="theme-toggle-btn" class="py-2 px-3 rounded-xl bg-sky-100/80 dark:bg-slate-800/80 border border-sky-300 dark:border-sky-500/40 text-slate-800 dark:text-sky-300 hover:scale-[1.02] transition-all text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm w-1/2 md:w-auto" title="Ganti Tema">
           <span id="theme-toggle-icon">🏔️</span>
           <span id="theme-toggle-label" class="font-outfit text-[11px]">ALPINE PEAK</span>
@@ -787,8 +876,111 @@
     <span id="toast-msg">Notifikasi...</span>
   </div>
 
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
   <!-- JavaScript Engine (Pure Vanilla JS) -->
   <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBibNfzMunM3Mz-PkIGgp48Aci8FgUI9tw",
+      authDomain: "portofolio-ict-rafa9a.firebaseapp.com",
+      projectId: "portofolio-ict-rafa9a",
+      storageBucket: "portofolio-ict-rafa9a.firebasestorage.app",
+      messagingSenderId: "636141838607",
+      appId: "1:636141838607:web:62da374736f9829fd19e7a"
+    };
+
+    const firebaseApp = firebase.apps.length ? firebase.apps[0] : firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    async function saveToFirebase(key, data) {
+      try {
+        await db.collection('portfolio').doc(key).set({ data });
+        console.log('Data berhasil disimpan ke Firebase:', key);
+        return true;
+      } catch (error) {
+        console.error('Gagal menyimpan data ke Firebase:', error);
+        return false;
+      }
+    }
+
+    async function loadFromFirebase(key, fallback) {
+      try {
+        const snapshot = await db.collection('portfolio').doc(key).get();
+        if (snapshot.exists) {
+          return snapshot.data().data;
+        }
+        return fallback;
+      } catch (error) {
+        console.error('Gagal membaca data dari Firebase:', error);
+        return fallback;
+      }
+    }
+
+    function subscribeToPortfolioKey(key, setter, renderer) {
+      try {
+        db.collection('portfolio').doc(key).onSnapshot((snapshot) => {
+          const data = snapshot.exists ? snapshot.data().data : null;
+          if (data !== null && data !== undefined) {
+            setter(data);
+            if (typeof renderer === 'function') renderer();
+          }
+        }, (error) => {
+          console.error(`Realtime listener gagal untuk ${key}:`, error);
+        });
+      } catch (error) {
+        console.error(`Gagal subscribe ${key}:`, error);
+      }
+    }
+
+    function syncProfileFromFirebase(data) {
+      if (!data) return;
+      if (data.status) document.getElementById('display-status').innerText = data.status;
+      if (data.greeting) document.getElementById('display-greeting').innerText = data.greeting;
+      if (data.bio) document.getElementById('display-bio').innerText = data.bio;
+    }
+
+    async function initPortfolioFromFirebase() {
+      try {
+        const defaultProfile = {
+          status: document.getElementById('display-status').innerText,
+          greeting: document.getElementById('display-greeting').innerText,
+          bio: document.getElementById('display-bio').innerText
+        };
+
+        const profileData = await loadFromFirebase('profile', defaultProfile);
+        syncProfileFromFirebase(profileData);
+
+        hobbiesData = await loadFromFirebase('hobbies', hobbiesData);
+        projectsData = await loadFromFirebase('projects', projectsData);
+        educationData = await loadFromFirebase('education', educationData);
+        reviewsData = await loadFromFirebase('reviews', reviewsData);
+        basecampMessages = await loadFromFirebase('messages', basecampMessages);
+
+        renderProjects();
+        renderHobbies();
+        renderEducation();
+        renderReviews();
+        renderAdminMessages();
+
+        subscribeToPortfolioKey('profile', syncProfileFromFirebase, () => {
+          if (document.getElementById('cms-full-dashboard').classList.contains('flex')) {
+            document.getElementById('cms-input-status').value = document.getElementById('display-status').innerText;
+            document.getElementById('cms-input-greeting').value = document.getElementById('display-greeting').innerText;
+            document.getElementById('cms-input-bio').value = document.getElementById('display-bio').innerText;
+          }
+        });
+
+        subscribeToPortfolioKey('hobbies', (data) => { hobbiesData = data || hobbiesData; renderHobbies(); renderCMSHobbiesEditor(); }, null);
+        subscribeToPortfolioKey('projects', (data) => { projectsData = data || projectsData; renderProjects(); renderCMSProjectsEditor(); }, null);
+        subscribeToPortfolioKey('education', (data) => { educationData = data || educationData; renderEducation(); renderCMSEducationEditor(); }, null);
+        subscribeToPortfolioKey('reviews', (data) => { reviewsData = data || reviewsData; renderReviews(); renderCMSReviewsEditor(); }, null);
+        subscribeToPortfolioKey('messages', (data) => { basecampMessages = data || basecampMessages; renderAdminMessages(); }, null);
+      } catch (error) {
+        console.error('Terjadi kesalahan saat inisialisasi Firebase:', error);
+      }
+    }
+
     // Data Inisialisasi
     const contactsData = [
       { name: 'GitHub', icon: '💻', link: 'https://github.com' },
@@ -952,7 +1144,7 @@
     }
 
     // Penanganan Formulir Pesan Depan
-    function handleCollabSubmit(event) {
+    async function handleCollabSubmit(event) {
       event.preventDefault();
       
       if (isBanned) {
@@ -990,6 +1182,7 @@
         
         basecampMessages.unshift({ name, email, msg: message, time: dateStr });
         renderAdminMessages();
+        await saveToFirebase('messages', basecampMessages);
 
         showToast('✨ Pesan sopan Anda berhasil dikirim ke Admin!');
         event.target.reset();
@@ -1104,9 +1297,10 @@
       `).join('');
     }
 
-    function deleteMessage(idx) {
+    async function deleteMessage(idx) {
       const removed = basecampMessages.splice(idx, 1);
       renderAdminMessages();
+      await saveToFirebase('messages', basecampMessages);
       showToast(`🗑️ Pesan dari ${removed[0]?.name || 'pengguna'} berhasil dihapus!`);
     }
 
@@ -1145,7 +1339,7 @@
       `).join('');
     }
 
-    function addNewHobbyCMS() {
+    async function addNewHobbyCMS() {
       hobbiesData.push({
         category: 'Literatur',
         title: 'Minat / Hobi Baru',
@@ -1154,18 +1348,21 @@
       });
       renderHobbies();
       renderCMSHobbiesEditor();
-      showToast('✨ Hobi baru berhasil ditambahkan!');
+      await saveToFirebase('hobbies', hobbiesData);
+      showToast('✨ Hobi baru berhasil ditambahkan dan disimpan!');
     }
 
-    function deleteHobbyCMS(idx) {
+    async function deleteHobbyCMS(idx) {
       hobbiesData.splice(idx, 1);
       renderHobbies();
       renderCMSHobbiesEditor();
+      await saveToFirebase('hobbies', hobbiesData);
       showToast('🗑️ Hobi berhasil dihapus!');
     }
 
     function renderCMSEducationEditor() {
       const container = document.getElementById('cms-education-editor');
+      if (!container) return;
       container.innerHTML = educationData.map((e, idx) => `
         <div class="alpine-card p-5 border border-sky-500/30 space-y-3">
           <div class="flex justify-between items-center">
@@ -1195,6 +1392,7 @@
 
     function renderCMSProjectsEditor() {
       const container = document.getElementById('cms-projects-editor');
+      if (!container) return;
       container.innerHTML = projectsData.map((p, idx) => `
         <div class="alpine-card p-5 border border-sky-500/30 space-y-3">
           <div class="flex justify-between items-center">
@@ -1234,6 +1432,7 @@
 
     function renderCMSReviewsEditor() {
       const container = document.getElementById('cms-reviews-editor');
+      if (!container) return;
       container.innerHTML = reviewsData.map((r, idx) => `
         <div class="alpine-card p-5 border border-sky-500/30 space-y-3">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -1254,7 +1453,7 @@
       `).join('');
     }
 
-    function addNewProjectCMS() {
+    async function addNewProjectCMS() {
       projectsData.push({
         title: 'Karya Proyek Baru',
         desc: 'Deskripsi proyek baru yang dapat Anda atur langsung.',
@@ -1266,7 +1465,8 @@
       });
       renderProjects();
       renderCMSProjectsEditor();
-      showToast('✨ Proyek baru berhasil ditambahkan!');
+      await saveToFirebase('projects', projectsData);
+      showToast('✨ Proyek baru berhasil ditambahkan dan disimpan!');
     }
 
     function resetBanStatus() {
@@ -1279,11 +1479,17 @@
       showToast('🔓 Akses pemblokiran pesan telah di-reset oleh Admin.');
     }
 
-    function saveCMSProfile() {
-      document.getElementById('display-status').innerText = document.getElementById('cms-input-status').value;
-      document.getElementById('display-greeting').innerText = document.getElementById('cms-input-greeting').value;
-      document.getElementById('display-bio').innerText = document.getElementById('cms-input-bio').value;
-      showToast('✨ Profil header berhasil diperbarui secara langsung!');
+    async function saveCMSProfile() {
+      const status = document.getElementById('cms-input-status').value;
+      const greeting = document.getElementById('cms-input-greeting').value;
+      const bio = document.getElementById('cms-input-bio').value;
+
+      document.getElementById('display-status').innerText = status;
+      document.getElementById('display-greeting').innerText = greeting;
+      document.getElementById('display-bio').innerText = bio;
+
+      await saveToFirebase('profile', { status, greeting, bio });
+      showToast('✨ Profil header berhasil diperbarui dan tersimpan di Firebase!');
     }
 
     // Function Render Komponen Halaman Depan
@@ -1379,12 +1585,9 @@
     }
 
     // Inisialisasi Konten & Scroll Observer
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', async () => {
       renderMarquee();
-      renderProjects();
-      renderHobbies();
-      renderEducation();
-      renderReviews();
+      await initPortfolioFromFirebase();
 
       // Fitur Pelacak Tatapan Mata Karikatur
       document.addEventListener('mousemove', (e) => {
