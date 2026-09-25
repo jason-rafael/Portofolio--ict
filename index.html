@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="id" class="dark scroll-smooth">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jason Rafael Gunawan - Mountain Expedition Portfolio & Admin CMS</title>
-  
+
   <!-- Google Fonts: Outfit, Plus Jakarta Sans, Fredoka -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Outfit:wght@500;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Outfit:wght@500;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -76,7 +79,7 @@
       padding: 0;
       overflow-x: hidden;
       transition: background-color 0.4s ease, color 0.4s ease;
-      background-image: 
+      background-image:
         linear-gradient(to bottom, rgba(11, 19, 41, 0.55), rgba(11, 19, 41, 0.82)),
         url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80');
       background-size: cover;
@@ -86,20 +89,45 @@
     }
 
     @keyframes lakeWaterFlow {
-      0% { transform: translateX(0) scaleY(1); }
-      50% { transform: translateX(-35px) scaleY(1.06); }
-      100% { transform: translateX(0) scaleY(1); }
+      0% {
+        transform: translateX(0) scaleY(1);
+      }
+
+      50% {
+        transform: translateX(-35px) scaleY(1.06);
+      }
+
+      100% {
+        transform: translateX(0) scaleY(1);
+      }
     }
 
     @keyframes lakeWaterFlowSecondary {
-      0% { transform: translateX(0) translateY(0); }
-      50% { transform: translateX(30px) translateY(-3px); }
-      100% { transform: translateX(0) translateY(0); }
+      0% {
+        transform: translateX(0) translateY(0);
+      }
+
+      50% {
+        transform: translateX(30px) translateY(-3px);
+      }
+
+      100% {
+        transform: translateX(0) translateY(0);
+      }
     }
 
     @keyframes subtleBreezeShimmer {
-      0%, 100% { opacity: 0.15; transform: translateY(0); }
-      50% { opacity: 0.35; transform: translateY(-4px); }
+
+      0%,
+      100% {
+        opacity: 0.15;
+        transform: translateY(0);
+      }
+
+      50% {
+        opacity: 0.35;
+        transform: translateY(-4px);
+      }
     }
 
     .animate-water-flow {
@@ -174,7 +202,7 @@
         width: 100%;
       }
 
-      .nav-action-group > button {
+      .nav-action-group>button {
         flex: 1 1 0;
         min-width: 0;
       }
@@ -221,13 +249,25 @@
     }
 
     @keyframes mountainFloat {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-6px); }
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-6px);
+      }
     }
 
     @keyframes marqueeScroll {
-      0% { transform: translateX(0%); }
-      100% { transform: translateX(-50%); }
+      0% {
+        transform: translateX(0%);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
     }
 
     .animate-mountain-float {
@@ -256,32 +296,40 @@
       transform: translateY(0);
     }
 
-      ::-webkit-scrollbar {
+    ::-webkit-scrollbar {
       width: 8px;
     }
+
     ::-webkit-scrollbar-track {
       background: #0b1329;
     }
+
     ::-webkit-scrollbar-thumb {
       background: #0284c7;
       border-radius: 4px;
     }
+
     ::-webkit-scrollbar-thumb:hover {
       background: #38bdf8;
     }
   </style>
 </head>
 
-<body class="min-h-screen flex flex-col justify-between pb-24 md:pb-12 antialiased selection:bg-sky-400 selection:text-slate-900 relative">
+<body
+  class="min-h-screen flex flex-col justify-between pb-24 md:pb-12 antialiased selection:bg-sky-400 selection:text-slate-900 relative">
 
   <!-- Lapisan Efek Latar Belakang Atmosfer Pegunungan -->
   <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-t from-sky-900/15 via-transparent to-teal-900/10 animate-breeze-shimmer"></div>
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-sky-900/15 via-transparent to-teal-900/10 animate-breeze-shimmer">
+    </div>
     <div class="absolute bottom-0 left-0 right-0 h-24 sm:h-32 opacity-35 dark:opacity-45 overflow-hidden">
-      <svg class="absolute bottom-0 w-[200%] h-full text-sky-500/30 dark:text-sky-400/25 animate-water-flow" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <svg class="absolute bottom-0 w-[200%] h-full text-sky-500/30 dark:text-sky-400/25 animate-water-flow"
+        viewBox="0 0 1200 120" preserveAspectRatio="none">
         <path d="M0,0 C150,90 350,-40 500,50 C650,140 900,10 1200,40 L1200,120 L0,120 Z" fill="currentColor"></path>
       </svg>
-      <svg class="absolute -bottom-2 w-[200%] h-full text-teal-400/20 dark:text-teal-300/20 animate-water-flow-reverse" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <svg class="absolute -bottom-2 w-[200%] h-full text-teal-400/20 dark:text-teal-300/20 animate-water-flow-reverse"
+        viewBox="0 0 1200 120" preserveAspectRatio="none">
         <path d="M0,30 C200,-20 450,80 700,20 C950,-30 1100,60 1200,10 L1200,120 L0,120 Z" fill="currentColor"></path>
       </svg>
     </div>
@@ -289,58 +337,75 @@
 
   <!-- Header Navigasi Atas (Tampilan Depan Utama Publik) -->
   <header class="sticky top-4 z-40 max-w-7xl mx-auto px-4 w-full">
-    <nav class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border border-sky-300/40 dark:border-sky-500/30 rounded-2xl p-3 sm:p-4 shadow-xl flex flex-col md:flex-row items-center justify-between gap-3">
-      
+    <nav
+      class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border border-sky-300/40 dark:border-sky-500/30 rounded-2xl p-3 sm:p-4 shadow-xl flex flex-col md:flex-row items-center justify-between gap-3">
+
       <div class="w-full md:w-auto flex items-center justify-between">
         <a href="#hero" class="flex items-center gap-3 shrink-0 group">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-600 via-teal-500 to-amber-500 text-white flex items-center justify-center font-outfit font-black text-sm shadow-md group-hover:scale-105 transition-transform border border-amber-200/50">
+          <div
+            class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-600 via-teal-500 to-amber-500 text-white flex items-center justify-center font-outfit font-black text-sm shadow-md group-hover:scale-105 transition-transform border border-amber-200/50">
             JRG
           </div>
           <div class="flex flex-col">
-            <span class="font-outfit font-extrabold text-slate-900 dark:text-sky-300 text-xs sm:text-sm tracking-wide">JASON R. GUNAWAN</span>
-            <span class="text-[9px] font-fredoka tracking-wider text-amber-600 dark:text-amber-400 uppercase">🏔️ MOUNTAIN DEV</span>
+            <span
+              class="font-outfit font-extrabold text-slate-900 dark:text-sky-300 text-xs sm:text-sm tracking-wide">JASON
+              R. GUNAWAN</span>
+            <span class="text-[9px] font-fredoka tracking-wider text-amber-600 dark:text-amber-400 uppercase">🏔️
+              MOUNTAIN DEV</span>
           </div>
         </a>
 
         <!-- Tombol Menu Mobile Responsif -->
-        <button onclick="toggleMobileMenu()" class="md:hidden py-2 px-3.5 bg-sky-500/10 dark:bg-slate-800 border border-sky-400/30 text-sky-600 dark:text-sky-300 rounded-xl text-xs font-bold font-outfit flex items-center gap-1">
+        <button onclick="toggleMobileMenu()"
+          class="md:hidden py-2 px-3.5 bg-sky-500/10 dark:bg-slate-800 border border-sky-400/30 text-sky-600 dark:text-sky-300 rounded-xl text-xs font-bold font-outfit flex items-center gap-1">
           <span id="mobile-menu-icon">☰</span>
           <span>MENU</span>
         </button>
       </div>
 
       <!-- Menu Navigasi Depan Publik (Terpusat) -->
-      <div id="nav-menu-container" class="hidden md:flex flex-col md:flex-row items-center justify-center w-full md:w-auto gap-2 text-xs font-fredoka font-bold tracking-wider text-slate-700 dark:text-slate-300 transition-all duration-300">
+      <div id="nav-menu-container"
+        class="hidden md:flex flex-col md:flex-row items-center justify-center w-full md:w-auto gap-2 text-xs font-fredoka font-bold tracking-wider text-slate-700 dark:text-slate-300 transition-all duration-300">
         <div class="grid grid-cols-2 sm:grid-cols-3 md:flex items-center justify-center gap-2 w-full text-center">
-          <a href="#hero" onclick="closeMobileMenu()" class="flex items-center justify-center gap-1 px-3 py-2 rounded-xl hover:bg-sky-500/10 hover:text-sky-500 transition-all bg-slate-100 dark:bg-slate-800/50 md:bg-transparent">
+          <a href="#hero" onclick="closeMobileMenu()"
+            class="flex items-center justify-center gap-1 px-3 py-2 rounded-xl hover:bg-sky-500/10 hover:text-sky-500 transition-all bg-slate-100 dark:bg-slate-800/50 md:bg-transparent">
             <span>🏔️</span> PROFILE
           </a>
-          <a href="#projects" onclick="closeMobileMenu()" class="flex items-center justify-center gap-1 px-3 py-2 rounded-xl hover:bg-sky-500/10 hover:text-sky-500 transition-all bg-slate-100 dark:bg-slate-800/50 md:bg-transparent">
+          <a href="#projects" onclick="closeMobileMenu()"
+            class="flex items-center justify-center gap-1 px-3 py-2 rounded-xl hover:bg-sky-500/10 hover:text-sky-500 transition-all bg-slate-100 dark:bg-slate-800/50 md:bg-transparent">
             <span>⛵</span> PROJECTS
           </a>
-          <a href="#education" onclick="closeMobileMenu()" class="flex items-center justify-center gap-1 px-3 py-2 rounded-xl hover:bg-sky-500/10 hover:text-sky-500 transition-all bg-slate-100 dark:bg-slate-800/50 md:bg-transparent">
+          <a href="#education" onclick="closeMobileMenu()"
+            class="flex items-center justify-center gap-1 px-3 py-2 rounded-xl hover:bg-sky-500/10 hover:text-sky-500 transition-all bg-slate-100 dark:bg-slate-800/50 md:bg-transparent">
             <span>🧗</span> ACADEMIA
           </a>
-          <a href="#hobbies" onclick="closeMobileMenu()" class="flex items-center justify-center gap-1 px-3 py-2 rounded-xl hover:bg-sky-500/10 hover:text-sky-500 transition-all bg-slate-100 dark:bg-slate-800/50 md:bg-transparent">
+          <a href="#hobbies" onclick="closeMobileMenu()"
+            class="flex items-center justify-center gap-1 px-3 py-2 rounded-xl hover:bg-sky-500/10 hover:text-sky-500 transition-all bg-slate-100 dark:bg-slate-800/50 md:bg-transparent">
             <span>📚</span> HOBI
           </a>
-          <a href="#contacts" onclick="closeMobileMenu()" class="flex items-center justify-center gap-1 px-3 py-2 rounded-xl hover:bg-sky-500/10 hover:text-sky-500 transition-all bg-slate-100 dark:bg-slate-800/50 md:bg-transparent">
+          <a href="#contacts" onclick="closeMobileMenu()"
+            class="flex items-center justify-center gap-1 px-3 py-2 rounded-xl hover:bg-sky-500/10 hover:text-sky-500 transition-all bg-slate-100 dark:bg-slate-800/50 md:bg-transparent">
             <span>⛰️</span> KONTAK
           </a>
-          <a href="#reviews" onclick="closeMobileMenu()" class="flex items-center justify-center gap-1 px-3 py-2 rounded-xl hover:bg-sky-500/10 hover:text-sky-500 transition-all bg-slate-100 dark:bg-slate-800/50 md:bg-transparent col-span-2 sm:col-span-1">
+          <a href="#reviews" onclick="closeMobileMenu()"
+            class="flex items-center justify-center gap-1 px-3 py-2 rounded-xl hover:bg-sky-500/10 hover:text-sky-500 transition-all bg-slate-100 dark:bg-slate-800/50 md:bg-transparent col-span-2 sm:col-span-1">
             <span>🏕️</span> REVIEWS
           </a>
         </div>
       </div>
 
       <!-- Tombol Aksi (Tema & CMS Admin Login) -->
-      <div class="nav-action-group flex items-center justify-center gap-2 shrink-0 w-full md:w-auto pt-2 md:pt-0 border-t md:border-t-0 border-slate-200 dark:border-slate-800">
-        <button onclick="toggleTheme()" id="theme-toggle-btn" class="py-2 px-3 rounded-xl bg-sky-100/80 dark:bg-slate-800/80 border border-sky-300 dark:border-sky-500/40 text-slate-800 dark:text-sky-300 hover:scale-[1.02] transition-all text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm w-1/2 md:w-auto" title="Ganti Tema">
+      <div
+        class="nav-action-group flex items-center justify-center gap-2 shrink-0 w-full md:w-auto pt-2 md:pt-0 border-t md:border-t-0 border-slate-200 dark:border-slate-800">
+        <button onclick="toggleTheme()" id="theme-toggle-btn"
+          class="py-2 px-3 rounded-xl bg-sky-100/80 dark:bg-slate-800/80 border border-sky-300 dark:border-sky-500/40 text-slate-800 dark:text-sky-300 hover:scale-[1.02] transition-all text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm w-1/2 md:w-auto"
+          title="Ganti Tema">
           <span id="theme-toggle-icon">🏔️</span>
           <span id="theme-toggle-label" class="font-outfit text-[11px]">ALPINE PEAK</span>
         </button>
 
-        <button onclick="openLoginModal()" class="py-2 px-3.5 bg-gradient-to-r from-sky-500/20 to-amber-500/20 hover:from-sky-500/30 hover:to-amber-500/30 border border-sky-500/50 text-sky-800 dark:text-sky-300 text-xs font-outfit font-bold rounded-xl transition-all shadow-sm flex items-center justify-center gap-1.5 w-1/2 md:w-auto">
+        <button onclick="openLoginModal()"
+          class="py-2 px-3.5 bg-gradient-to-r from-sky-500/20 to-amber-500/20 hover:from-sky-500/30 hover:to-amber-500/30 border border-sky-500/50 text-sky-800 dark:text-sky-300 text-xs font-outfit font-bold rounded-xl transition-all shadow-sm flex items-center justify-center gap-1.5 w-1/2 md:w-auto">
           <span>⚙️</span>
           <span>BASECAMP CMS</span>
         </button>
@@ -359,31 +424,39 @@
         <div class="absolute -left-12 -bottom-12 opacity-10 pointer-events-none text-9xl">✨</div>
 
         <div class="relative z-10 flex flex-col items-center">
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-500/15 border border-sky-500/40 text-sky-700 dark:text-sky-300 text-xs font-outfit font-bold tracking-wider uppercase mb-4 shadow-sm">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-500/15 border border-sky-500/40 text-sky-700 dark:text-sky-300 text-xs font-outfit font-bold tracking-wider uppercase mb-4 shadow-sm">
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
             <span id="display-status">🏔️ STATUS: TREKKING & CODING AT BASECAMP</span>
           </div>
 
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-2xl bg-amber-500/15 dark:bg-slate-800/80 text-amber-900 dark:text-amber-300 border border-amber-500/30 text-xs sm:text-sm font-semibold mb-4 shadow-sm font-sans">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-1.5 rounded-2xl bg-amber-500/15 dark:bg-slate-800/80 text-amber-900 dark:text-amber-300 border border-amber-500/30 text-xs sm:text-sm font-semibold mb-4 shadow-sm font-sans">
             <span>✨</span>
             <span id="display-greeting">Salam Lestari! Hi semua, perkenalkan saya Jason atau panggil saja Rafa!</span>
           </div>
 
-          <h1 id="display-name" class="text-3xl sm:text-5xl font-outfit font-black tracking-tight text-slate-900 dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-sky-300 dark:via-emerald-200 dark:to-amber-200 mb-2">
+          <h1 id="display-name"
+            class="text-3xl sm:text-5xl font-outfit font-black tracking-tight text-slate-900 dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-sky-300 dark:via-emerald-200 dark:to-amber-200 mb-2">
             JASON RAFAEL GUNAWAN
           </h1>
-          <p id="display-title" class="text-sky-700 dark:text-sky-400 font-fredoka text-lg sm:text-xl font-bold tracking-wide mb-3">
+          <p id="display-title"
+            class="text-sky-700 dark:text-sky-400 font-fredoka text-lg sm:text-xl font-bold tracking-wide mb-3">
             Pelajar & Web Enthusiast
           </p>
-          <p id="display-bio" class="text-slate-600 dark:text-slate-300 max-w-lg text-xs sm:text-sm leading-relaxed mb-6 font-sans">
-            Siswa yang antusias mengeksplorasi dunia pemrograman web, desain antarmuka modern, dan teknologi digital interaktif bernuansa ekspedisi pegunungan.
+          <p id="display-bio"
+            class="text-slate-600 dark:text-slate-300 max-w-lg text-xs sm:text-sm leading-relaxed mb-6 font-sans">
+            Siswa yang antusias mengeksplorasi dunia pemrograman web, desain antarmuka modern, dan teknologi digital
+            interaktif bernuansa ekspedisi pegunungan.
           </p>
 
           <!-- Avatar Karikatur SVG -->
           <div class="relative flex flex-col items-center justify-center my-2">
-            <div class="relative w-56 h-64 sm:w-64 sm:h-72 rounded-3xl bg-gradient-to-b from-sky-900/40 via-teal-900/30 to-amber-900/30 dark:from-slate-900/80 dark:via-sky-950/60 dark:to-emerald-950/80 p-3 shadow-2xl border-4 border-amber-500/60 dark:border-sky-400/60 backdrop-blur-md animate-mountain-float">
-              
-              <svg id="caricature-svg" class="w-full h-full drop-shadow-2xl transition-all duration-300" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div
+              class="relative w-56 h-64 sm:w-64 sm:h-72 rounded-3xl bg-gradient-to-b from-sky-900/40 via-teal-900/30 to-amber-900/30 dark:from-slate-900/80 dark:via-sky-950/60 dark:to-emerald-950/80 p-3 shadow-2xl border-4 border-amber-500/60 dark:border-sky-400/60 backdrop-blur-md animate-mountain-float">
+
+              <svg id="caricature-svg" class="w-full h-full drop-shadow-2xl transition-all duration-300"
+                viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <radialGradient id="skinGlow" cx="50%" cy="40%" r="65%">
                     <stop offset="0%" stop-color="#fff1f2" />
@@ -391,7 +464,7 @@
                     <stop offset="85%" stop-color="#fca5a5" />
                     <stop offset="100%" stop-color="#d97706" stop-opacity="0.2" />
                   </radialGradient>
-                  
+
                   <radialGradient id="faceShading" cx="50%" cy="30%" r="70%">
                     <stop offset="0%" stop-color="#fff5f5" />
                     <stop offset="55%" stop-color="#fed7aa" />
@@ -443,17 +516,22 @@
                   <path d="M40 150 Q 100 160 160 150" stroke="#38bdf8" stroke-width="2" opacity="0.4" fill="none" />
                   <path d="M35 170 Q 100 182 165 170" stroke="#38bdf8" stroke-width="2" opacity="0.4" fill="none" />
 
-                  <rect x="62" y="132" width="12" height="65" rx="4" fill="url(#strapGrad)" transform="rotate(8 62 132)" />
-                  <rect x="126" y="132" width="12" height="65" rx="4" fill="url(#strapGrad)" transform="rotate(-8 126 132)" />
+                  <rect x="62" y="132" width="12" height="65" rx="4" fill="url(#strapGrad)"
+                    transform="rotate(8 62 132)" />
+                  <rect x="126" y="132" width="12" height="65" rx="4" fill="url(#strapGrad)"
+                    transform="rotate(-8 126 132)" />
                   <rect x="74" y="165" width="52" height="8" rx="3" fill="#d97706" />
-                  <path d="M72 126 L100 148 L128 126" stroke="#fbbf24" stroke-width="4" stroke-linejoin="round" fill="none" />
+                  <path d="M72 126 L100 148 L128 126" stroke="#fbbf24" stroke-width="4" stroke-linejoin="round"
+                    fill="none" />
                 </g>
 
                 <rect x="86" y="110" width="28" height="22" rx="8" fill="url(#faceShading)" />
                 <path d="M86 110 Q 100 120 114 110" fill="#f472b6" opacity="0.2" />
 
                 <g filter="url(#softShadow)">
-                  <path d="M58 68 C 58 45, 75 42, 100 42 C 125 42, 142 45, 142 68 C 142 105, 128 122, 100 122 C 72 122, 58 105, 58 68 Z" fill="url(#faceShading)" />
+                  <path
+                    d="M58 68 C 58 45, 75 42, 100 42 C 125 42, 142 45, 142 68 C 142 105, 128 122, 100 122 C 72 122, 58 105, 58 68 Z"
+                    fill="url(#faceShading)" />
                 </g>
 
                 <ellipse cx="57" cy="84" rx="7" ry="11" fill="url(#faceShading)" />
@@ -462,19 +540,26 @@
                 <path d="M143 79 C 145 83, 145 87, 142 90" stroke="#fb7185" stroke-width="1.5" fill="none" />
 
                 <g filter="url(#softShadow)">
-                  <path d="M52 64 C 50 32, 75 20, 100 20 C 125 20, 150 32, 148 64 C 148 70, 138 40, 100 40 C 62 40, 52 70, 52 64 Z" fill="url(#hairGrad)" />
-                  <path d="M58 55 C 65 38, 85 34, 100 38 C 115 34, 135 38, 142 55 C 130 46, 115 44, 100 47 C 85 44, 70 46, 58 55 Z" fill="#334155" opacity="0.9" />
+                  <path
+                    d="M52 64 C 50 32, 75 20, 100 20 C 125 20, 150 32, 148 64 C 148 70, 138 40, 100 40 C 62 40, 52 70, 52 64 Z"
+                    fill="url(#hairGrad)" />
+                  <path
+                    d="M58 55 C 65 38, 85 34, 100 38 C 115 34, 135 38, 142 55 C 130 46, 115 44, 100 47 C 85 44, 70 46, 58 55 Z"
+                    fill="#334155" opacity="0.9" />
                 </g>
 
                 <ellipse cx="74" cy="94" rx="9" ry="5" fill="#f43f5e" opacity="0.25" filter="blur(2px)" />
                 <ellipse cx="126" cy="94" rx="9" ry="5" fill="#f43f5e" opacity="0.25" filter="blur(2px)" />
 
-                <path d="M100 76 L 98 88 L 102 88" stroke="#d97706" stroke-width="1.5" opacity="0.4" stroke-linecap="round" fill="none" />
+                <path d="M100 76 L 98 88 L 102 88" stroke="#d97706" stroke-width="1.5" opacity="0.4"
+                  stroke-linecap="round" fill="none" />
                 <ellipse cx="100" cy="89" rx="3" ry="1.5" fill="#d97706" opacity="0.3" />
 
                 <g id="expression-layer" class="transition-all duration-300">
-                  <ellipse id="eye-bg-left" cx="78" cy="80" rx="9" ry="10" fill="#ffffff" stroke="#334155" stroke-width="1.5" filter="url(#softShadow)" />
-                  <ellipse id="eye-bg-right" cx="122" cy="80" rx="9" ry="10" fill="#ffffff" stroke="#334155" stroke-width="1.5" filter="url(#softShadow)" />
+                  <ellipse id="eye-bg-left" cx="78" cy="80" rx="9" ry="10" fill="#ffffff" stroke="#334155"
+                    stroke-width="1.5" filter="url(#softShadow)" />
+                  <ellipse id="eye-bg-right" cx="122" cy="80" rx="9" ry="10" fill="#ffffff" stroke="#334155"
+                    stroke-width="1.5" filter="url(#softShadow)" />
 
                   <g id="pupils-group">
                     <circle id="pupil-left" cx="78" cy="80" r="5" fill="url(#irisGrad)" />
@@ -485,10 +570,13 @@
                     <circle cx="123.5" cy="82" r="1" fill="#38bdf8" opacity="0.8" />
                   </g>
 
-                  <path id="brow-left" d="M68 68 C74 65, 82 65, 88 68" stroke="#1e293b" stroke-width="3" stroke-linecap="round" fill="none" />
-                  <path id="brow-right" d="M112 68 C118 65, 126 65, 132 68" stroke="#1e293b" stroke-width="3" stroke-linecap="round" fill="none" />
+                  <path id="brow-left" d="M68 68 C74 65, 82 65, 88 68" stroke="#1e293b" stroke-width="3"
+                    stroke-linecap="round" fill="none" />
+                  <path id="brow-right" d="M112 68 C118 65, 126 65, 132 68" stroke="#1e293b" stroke-width="3"
+                    stroke-linecap="round" fill="none" />
 
-                  <path id="mouth" d="M82 102 C 88 112, 112 112, 118 102" stroke="#0f172a" stroke-width="3.5" stroke-linecap="round" fill="none" />
+                  <path id="mouth" d="M82 102 C 88 112, 112 112, 118 102" stroke="#0f172a" stroke-width="3.5"
+                    stroke-linecap="round" fill="none" />
                   <g id="accessories"></g>
                 </g>
               </svg>
@@ -496,19 +584,24 @@
 
             <!-- Preset Ekspresi Karikatur -->
             <div class="mt-4 flex flex-wrap justify-center gap-2 max-w-sm">
-              <button onclick="setCaricatureExpression('goggles')" class="px-3 py-1 bg-sky-100/90 dark:bg-slate-800/90 border border-amber-300 dark:border-sky-500/40 rounded-full text-xs font-fredoka font-bold text-slate-800 dark:text-sky-300 shadow-sm flex items-center gap-1">
+              <button onclick="setCaricatureExpression('goggles')"
+                class="px-3 py-1 bg-sky-100/90 dark:bg-slate-800/90 border border-amber-300 dark:border-sky-500/40 rounded-full text-xs font-fredoka font-bold text-slate-800 dark:text-sky-300 shadow-sm flex items-center gap-1">
                 <span>😎</span> Summit Shades
               </button>
-              <button onclick="setCaricatureExpression('beanie')" class="px-3 py-1 bg-sky-100/90 dark:bg-slate-800/90 border border-amber-300 dark:border-sky-500/40 rounded-full text-xs font-fredoka font-bold text-slate-800 dark:text-sky-300 shadow-sm flex items-center gap-1">
+              <button onclick="setCaricatureExpression('beanie')"
+                class="px-3 py-1 bg-sky-100/90 dark:bg-slate-800/90 border border-amber-300 dark:border-sky-500/40 rounded-full text-xs font-fredoka font-bold text-slate-800 dark:text-sky-300 shadow-sm flex items-center gap-1">
                 <span>🏔️</span> Alpine Beanie
               </button>
-              <button onclick="setCaricatureExpression('hiker')" class="px-3 py-1 bg-sky-100/90 dark:bg-slate-800/90 border border-amber-300 dark:border-sky-500/40 rounded-full text-xs font-fredoka font-bold text-slate-800 dark:text-sky-300 shadow-sm flex items-center gap-1">
+              <button onclick="setCaricatureExpression('hiker')"
+                class="px-3 py-1 bg-sky-100/90 dark:bg-slate-800/90 border border-amber-300 dark:border-sky-500/40 rounded-full text-xs font-fredoka font-bold text-slate-800 dark:text-sky-300 shadow-sm flex items-center gap-1">
                 <span>🧗</span> Trekker Vibe
               </button>
-              <button onclick="setCaricatureExpression('happy')" class="px-3 py-1 bg-sky-100/90 dark:bg-slate-800/90 border border-amber-300 dark:border-sky-500/40 rounded-full text-xs font-fredoka font-bold text-slate-800 dark:text-sky-300 shadow-sm flex items-center gap-1">
+              <button onclick="setCaricatureExpression('happy')"
+                class="px-3 py-1 bg-sky-100/90 dark:bg-slate-800/90 border border-amber-300 dark:border-sky-500/40 rounded-full text-xs font-fredoka font-bold text-slate-800 dark:text-sky-300 shadow-sm flex items-center gap-1">
                 <span>😊</span> Basecamp Smile
               </button>
-              <button onclick="setCaricatureExpression('wink')" class="px-3 py-1 bg-sky-100/90 dark:bg-slate-800/90 border border-amber-300 dark:border-sky-500/40 rounded-full text-xs font-fredoka font-bold text-slate-800 dark:text-sky-300 shadow-sm flex items-center gap-1">
+              <button onclick="setCaricatureExpression('wink')"
+                class="px-3 py-1 bg-sky-100/90 dark:bg-slate-800/90 border border-amber-300 dark:border-sky-500/40 rounded-full text-xs font-fredoka font-bold text-slate-800 dark:text-sky-300 shadow-sm flex items-center gap-1">
                 <span>😉</span> Peak Wink
               </button>
             </div>
@@ -516,10 +609,15 @@
 
           <!-- Tautan Tugas ICT Utama -->
           <div class="mt-6 w-full max-w-md">
-            <a id="display-website-cta" href="https://ictcodehub.web.id/student/tasks?task=ScsRVxKCA9XoYeBkAA4x" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2.5 w-full py-3.5 px-6 bg-gradient-to-r from-sky-600 via-teal-600 to-amber-500 hover:from-sky-500 hover:to-amber-400 text-white font-outfit font-black text-xs sm:text-sm rounded-2xl shadow-lg border border-amber-200/40 hover:shadow-sky-500/30 transition-all transform hover:-translate-y-0.5 active:scale-95">
+            <a id="display-website-cta" href="https://ictcodehub.web.id/student/tasks?task=ScsRVxKCA9XoYeBkAA4x"
+              target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-2.5 w-full py-3.5 px-6 bg-gradient-to-r from-sky-600 via-teal-600 to-amber-500 hover:from-sky-500 hover:to-amber-400 text-white font-outfit font-black text-xs sm:text-sm rounded-2xl shadow-lg border border-amber-200/40 hover:shadow-sky-500/30 transition-all transform hover:-translate-y-0.5 active:scale-95">
               <span>💻</span>
               <span>BUKA WEB TUGAS ICT UTAMA</span>
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
             </a>
           </div>
 
@@ -531,14 +629,22 @@
         <div class="flex items-center justify-between mb-3">
           <div class="flex items-center gap-2">
             <span class="text-sky-600 dark:text-sky-400 font-outfit font-bold text-lg">⛰️</span>
-            <h2 class="text-xl font-outfit font-bold text-slate-900 dark:text-white uppercase tracking-wide drop-shadow-sm">Kontak & Media Sosial</h2>
+            <h2
+              class="text-xl font-outfit font-bold text-slate-900 dark:text-white uppercase tracking-wide drop-shadow-sm">
+              Kontak & Media Sosial</h2>
           </div>
-          <span class="text-[10px] font-fredoka uppercase text-amber-700 dark:text-amber-400">// 10+ PLATFORM MARQUEE</span>
+          <span class="text-[10px] font-fredoka uppercase text-amber-700 dark:text-amber-400">// 10+ PLATFORM
+            MARQUEE</span>
         </div>
 
-        <div class="marquee-container relative w-full overflow-hidden alpine-card py-4 border border-sky-400/30 dark:border-sky-500/30 rounded-2xl bg-white/70 dark:bg-slate-900/80 backdrop-blur-md">
-          <div class="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-slate-100 dark:from-slate-950 to-transparent z-10 pointer-events-none"></div>
-          <div class="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-slate-100 dark:from-slate-950 to-transparent z-10 pointer-events-none"></div>
+        <div
+          class="marquee-container relative w-full overflow-hidden alpine-card py-4 border border-sky-400/30 dark:border-sky-500/30 rounded-2xl bg-white/70 dark:bg-slate-900/80 backdrop-blur-md">
+          <div
+            class="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-slate-100 dark:from-slate-950 to-transparent z-10 pointer-events-none">
+          </div>
+          <div
+            class="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-slate-100 dark:from-slate-950 to-transparent z-10 pointer-events-none">
+          </div>
           <div id="marquee-track-el" class="marquee-track flex items-center gap-4 px-2"></div>
         </div>
       </section>
@@ -548,11 +654,14 @@
         <div class="flex items-center justify-between mb-1">
           <div class="flex items-center gap-2">
             <span class="text-sky-600 dark:text-sky-400 font-outfit font-bold text-lg">🏔️</span>
-            <h2 class="text-xl font-outfit font-bold text-slate-900 dark:text-white uppercase tracking-wide drop-shadow-sm">Projects & Digital Platforms</h2>
+            <h2
+              class="text-xl font-outfit font-bold text-slate-900 dark:text-white uppercase tracking-wide drop-shadow-sm">
+              Projects & Digital Platforms</h2>
           </div>
         </div>
-        <p class="text-xs text-slate-700 dark:text-slate-300 font-sans mb-6 font-semibold">// Platform karya YouTube, X (Twitter), Instagram, dan ICT CodeHub yang dapat dikunjungi dan diedit admin.</p>
-        
+        <p class="text-xs text-slate-700 dark:text-slate-300 font-sans mb-6 font-semibold">// Platform karya YouTube, X
+          (Twitter), Instagram, dan ICT CodeHub yang dapat dikunjungi dan diedit admin.</p>
+
         <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 gap-5"></div>
       </section>
 
@@ -561,12 +670,16 @@
         <div class="flex items-center justify-between mb-1">
           <div class="flex items-center gap-2">
             <span class="text-sky-600 dark:text-sky-400 font-outfit font-bold text-lg">📚</span>
-            <h2 class="text-xl font-outfit font-bold text-slate-900 dark:text-white uppercase tracking-wide drop-shadow-sm">Ketertarikan & Hobi</h2>
+            <h2
+              class="text-xl font-outfit font-bold text-slate-900 dark:text-white uppercase tracking-wide drop-shadow-sm">
+              Ketertarikan & Hobi</h2>
           </div>
-          <span class="text-[10px] font-fredoka uppercase text-amber-600 dark:text-amber-400">// LITERATUR & TEKNOLOGI</span>
+          <span class="text-[10px] font-fredoka uppercase text-amber-600 dark:text-amber-400">// LITERATUR &
+            TEKNOLOGI</span>
         </div>
-        <p class="text-xs text-slate-700 dark:text-slate-300 font-sans mb-6 font-semibold">// Eksplorasi minat utama di bidang literatur bacaan, penulisan, serta inovasi teknologi modern.</p>
-        
+        <p class="text-xs text-slate-700 dark:text-slate-300 font-sans mb-6 font-semibold">// Eksplorasi minat utama di
+          bidang literatur bacaan, penulisan, serta inovasi teknologi modern.</p>
+
         <div id="hobbies-container" class="grid grid-cols-1 md:grid-cols-2 gap-5"></div>
       </section>
 
@@ -574,10 +687,13 @@
       <section id="education" class="scroll-mt-20 reveal-on-scroll">
         <div class="flex items-center gap-2 mb-1">
           <span class="text-amber-600 dark:text-amber-400 font-outfit font-bold text-lg">🧗</span>
-          <h2 class="text-xl font-outfit font-bold text-slate-900 dark:text-white uppercase tracking-wide drop-shadow-sm">Academic Elevation Journey</h2>
+          <h2
+            class="text-xl font-outfit font-bold text-slate-900 dark:text-white uppercase tracking-wide drop-shadow-sm">
+            Academic Elevation Journey</h2>
         </div>
-        <p class="text-xs text-slate-700 dark:text-slate-300 font-sans mb-6 font-semibold">// Riwayat jenjang pendidikan formal dari TK hingga SMP saat ini.</p>
-        
+        <p class="text-xs text-slate-700 dark:text-slate-300 font-sans mb-6 font-semibold">// Riwayat jenjang pendidikan
+          formal dari TK hingga SMP saat ini.</p>
+
         <div id="education-container" class="grid grid-cols-1 md:grid-cols-3 gap-5"></div>
       </section>
 
@@ -585,21 +701,27 @@
       <section id="reviews" class="scroll-mt-20 reveal-on-scroll">
         <div class="flex items-center gap-2 mb-1">
           <span class="text-emerald-600 dark:text-emerald-400 font-outfit font-bold text-lg">🏕️</span>
-          <h2 class="text-xl font-outfit font-bold text-slate-900 dark:text-white uppercase tracking-wide drop-shadow-sm">Reviews & Expedition Endorsements</h2>
+          <h2
+            class="text-xl font-outfit font-bold text-slate-900 dark:text-white uppercase tracking-wide drop-shadow-sm">
+            Reviews & Expedition Endorsements</h2>
         </div>
-        <p class="text-xs text-slate-700 dark:text-slate-300 font-sans mb-6 font-semibold">// Umpan balik dan testimoni dari guru, rekan akademis, serta kolaborator.</p>
-        
+        <p class="text-xs text-slate-700 dark:text-slate-300 font-sans mb-6 font-semibold">// Umpan balik dan testimoni
+          dari guru, rekan akademis, serta kolaborator.</p>
+
         <div id="reviews-container" class="grid grid-cols-1 md:grid-cols-2 gap-5"></div>
       </section>
 
       <!-- Section Kolaborasi -->
       <section id="collaboration" class="scroll-mt-20 reveal-on-scroll">
         <div class="alpine-card p-6 sm:p-10 border border-sky-500/40 text-center relative overflow-hidden shadow-2xl">
-          <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-sky-500/15 rounded-full blur-3xl pointer-events-none"></div>
-          <div class="absolute -left-16 -top-16 w-64 h-64 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
+          <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-sky-500/15 rounded-full blur-3xl pointer-events-none">
+          </div>
+          <div class="absolute -left-16 -top-16 w-64 h-64 bg-amber-500/15 rounded-full blur-3xl pointer-events-none">
+          </div>
 
           <div class="relative z-10 max-w-2xl mx-auto">
-            <span class="inline-block px-3.5 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/40 text-amber-600 dark:text-amber-300 text-xs font-outfit font-extrabold tracking-wider uppercase mb-3 shadow-sm">
+            <span
+              class="inline-block px-3.5 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/40 text-amber-600 dark:text-amber-300 text-xs font-outfit font-extrabold tracking-wider uppercase mb-3 shadow-sm">
               🤝 EXPEDITION PARTNERSHIP
             </span>
 
@@ -608,63 +730,84 @@
             </h2>
 
             <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-sans mb-6 leading-relaxed">
-              Punya ide proyek menarik, tawaran eksplorasi digital, atau sekadar ingin bertegur sapa di basecamp? Kirimkan pesan Anda melalui formulir interaktif di bawah ini!
+              Punya ide proyek menarik, tawaran eksplorasi digital, atau sekadar ingin bertegur sapa di basecamp?
+              Kirimkan pesan Anda melalui formulir interaktif di bawah ini!
             </p>
 
             <!-- Spanduk Peringatan Pemblokiran -->
-            <div id="ban-banner" class="hidden mb-6 p-4 rounded-xl bg-red-950/90 border-2 border-red-500 text-red-200 text-xs text-left shadow-xl">
+            <div id="ban-banner"
+              class="hidden mb-6 p-4 rounded-xl bg-red-950/90 border-2 border-red-500 text-red-200 text-xs text-left shadow-xl">
               <div class="flex items-center gap-2 font-outfit font-black text-sm text-red-400 uppercase mb-1">
                 <span>🚫</span> AKUN/PERANGKAT DIBLOKIR PADA BASECAMP
               </div>
-              <p>Anda telah mencapai <strong>3 kali pelanggaran aturan pesan</strong> (menggunakan kata tidak sopan/SARA/spam). Akses pengiriman pesan dihentikan. Hubungi admin via Basecamp CMS untuk membuka kembali akses.</p>
+              <p>Anda telah mencapai <strong>3 kali pelanggaran aturan pesan</strong> (menggunakan kata tidak
+                sopan/SARA/spam). Akses pengiriman pesan dihentikan. Hubungi admin via Basecamp CMS untuk membuka
+                kembali akses.</p>
             </div>
 
             <!-- Formulir Kirim Pesan -->
             <form id="collab-form" onsubmit="handleCollabSubmit(event)" class="space-y-4 text-left">
               <div>
-                <label for="collab-name" class="block text-xs font-outfit font-bold text-slate-800 dark:text-sky-300 mb-1.5 uppercase tracking-wider">
+                <label for="collab-name"
+                  class="block text-xs font-outfit font-bold text-slate-800 dark:text-sky-300 mb-1.5 uppercase tracking-wider">
                   Nama Lengkap
                 </label>
-                <input type="text" id="collab-name" required placeholder="Masukkan nama Anda..." class="w-full px-4 py-3 rounded-xl bg-white/80 dark:bg-slate-950/80 border border-sky-300 dark:border-sky-500/40 text-slate-900 dark:text-sky-100 text-xs sm:text-sm focus:ring-2 focus:ring-sky-500 focus:outline-none transition-all placeholder:text-slate-400 shadow-inner">
+                <input type="text" id="collab-name" required placeholder="Masukkan nama Anda..."
+                  class="w-full px-4 py-3 rounded-xl bg-white/80 dark:bg-slate-950/80 border border-sky-300 dark:border-sky-500/40 text-slate-900 dark:text-sky-100 text-xs sm:text-sm focus:ring-2 focus:ring-sky-500 focus:outline-none transition-all placeholder:text-slate-400 shadow-inner">
               </div>
 
               <div>
-                <label for="collab-email" class="block text-xs font-outfit font-bold text-slate-800 dark:text-sky-300 mb-1.5 uppercase tracking-wider">
+                <label for="collab-email"
+                  class="block text-xs font-outfit font-bold text-slate-800 dark:text-sky-300 mb-1.5 uppercase tracking-wider">
                   Email
                 </label>
-                <input type="email" id="collab-email" required placeholder="nama@email.com" class="w-full px-4 py-3 rounded-xl bg-white/80 dark:bg-slate-950/80 border border-sky-300 dark:border-sky-500/40 text-slate-900 dark:text-sky-100 text-xs sm:text-sm focus:ring-2 focus:ring-sky-500 focus:outline-none transition-all placeholder:text-slate-400 shadow-inner">
+                <input type="email" id="collab-email" required placeholder="nama@email.com"
+                  class="w-full px-4 py-3 rounded-xl bg-white/80 dark:bg-slate-950/80 border border-sky-300 dark:border-sky-500/40 text-slate-900 dark:text-sky-100 text-xs sm:text-sm focus:ring-2 focus:ring-sky-500 focus:outline-none transition-all placeholder:text-slate-400 shadow-inner">
               </div>
 
               <div>
-                <label for="collab-message" class="block text-xs font-outfit font-bold text-slate-800 dark:text-sky-300 mb-1.5 uppercase tracking-wider">
+                <label for="collab-message"
+                  class="block text-xs font-outfit font-bold text-slate-800 dark:text-sky-300 mb-1.5 uppercase tracking-wider">
                   Pesan atau Proyek
                 </label>
-                <textarea id="collab-message" rows="4" required placeholder="Tuliskan detail pesan, ide proyek, atau tawaran kerja sama Anda di sini..." class="w-full px-4 py-3 rounded-xl bg-white/80 dark:bg-slate-950/80 border border-sky-300 dark:border-sky-500/40 text-slate-900 dark:text-sky-100 text-xs sm:text-sm focus:ring-2 focus:ring-sky-500 focus:outline-none transition-all placeholder:text-slate-400 resize-none shadow-inner"></textarea>
-                
+                <textarea id="collab-message" rows="4" required
+                  placeholder="Tuliskan detail pesan, ide proyek, atau tawaran kerja sama Anda di sini..."
+                  class="w-full px-4 py-3 rounded-xl bg-white/80 dark:bg-slate-950/80 border border-sky-300 dark:border-sky-500/40 text-slate-900 dark:text-sky-100 text-xs sm:text-sm focus:ring-2 focus:ring-sky-500 focus:outline-none transition-all placeholder:text-slate-400 resize-none shadow-inner"></textarea>
+
                 <!-- Peringatan jika terdeteksi kata kasar -->
-                <div id="collab-warning" class="hidden mt-2 p-3 rounded-xl bg-red-500/20 border border-red-500/50 text-red-300 text-xs font-semibold leading-relaxed flex items-start gap-2">
+                <div id="collab-warning"
+                  class="hidden mt-2 p-3 rounded-xl bg-red-500/20 border border-red-500/50 text-red-300 text-xs font-semibold leading-relaxed flex items-start gap-2">
                   <span class="text-base">⚠️</span>
                   <div>
-                    <span id="collab-warning-text">Terdapat kata-kata yang kurang sopan. Mohon perbaiki dan tulis ulang pesan Anda.</span>
-                    <div id="violations-count-tag" class="mt-1 font-bold text-red-400">Pelanggaran saat ini: 0 / 3 Kesempatan</div>
+                    <span id="collab-warning-text">Terdapat kata-kata yang kurang sopan. Mohon perbaiki dan tulis ulang
+                      pesan Anda.</span>
+                    <div id="violations-count-tag" class="mt-1 font-bold text-red-400">Pelanggaran saat ini: 0 / 3
+                      Kesempatan</div>
                   </div>
                 </div>
               </div>
 
-              <button id="collab-submit-btn" type="submit" class="w-full py-4 px-6 bg-gradient-to-r from-sky-600 via-teal-600 to-amber-500 hover:from-sky-500 hover:to-amber-400 text-white font-outfit font-black text-xs sm:text-sm rounded-xl shadow-xl border border-amber-300/40 hover:shadow-sky-500/40 transition-all transform hover:-translate-y-0.5 active:scale-95 flex items-center justify-center gap-2 group cursor-pointer">
+              <button id="collab-submit-btn" type="submit"
+                class="w-full py-4 px-6 bg-gradient-to-r from-sky-600 via-teal-600 to-amber-500 hover:from-sky-500 hover:to-amber-400 text-white font-outfit font-black text-xs sm:text-sm rounded-xl shadow-xl border border-amber-300/40 hover:shadow-sky-500/40 transition-all transform hover:-translate-y-0.5 active:scale-95 flex items-center justify-center gap-2 group cursor-pointer">
                 <span>KIRIM PESAN KE BASECAMP</span>
-                <svg class="w-4 h-4 group-hover:translate-x-1.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                <svg class="w-4 h-4 group-hover:translate-x-1.5 transition-transform" fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
               </button>
             </form>
 
-            <div class="mt-6 p-4 rounded-xl bg-slate-900/60 border border-sky-500/20 text-[11px] text-slate-400 dark:text-slate-300 text-left font-sans leading-relaxed">
-              <p class="font-bold text-slate-800 dark:text-sky-300 mb-1 font-outfit uppercase flex items-center gap-1.5">
+            <div
+              class="mt-6 p-4 rounded-xl bg-slate-900/60 border border-sky-500/20 text-[11px] text-slate-400 dark:text-slate-300 text-left font-sans leading-relaxed">
+              <p
+                class="font-bold text-slate-800 dark:text-sky-300 mb-1 font-outfit uppercase flex items-center gap-1.5">
                 <span>📜</span> Tata Tertib Pesan Basecamp:
               </p>
               <ul class="list-disc list-inside space-y-1 text-slate-600 dark:text-slate-400">
                 <li>Gunakan bahasa yang sopan, santun, dan konstruktif.</li>
                 <li>Semua pesan yang sopan akan langsung diteruskan ke inbox **Basecamp CMS Admin**.</li>
-                <li>Pesan dengan kata kasar/vulgar akan ditolak. Pelanggaran hingga 3x akan mengakibatkan pemblokiran otomatis.</li>
+                <li>Pesan dengan kata kasar/vulgar akan ditolak. Pelanggaran hingga 3x akan mengakibatkan pemblokiran
+                  otomatis.</li>
               </ul>
             </div>
 
@@ -676,26 +819,34 @@
   </div>
 
   <!-- Modal Login Admin (Autentikasi Rahasia) -->
-  <div id="login-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
+  <div id="login-modal"
+    class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md">
     <div class="alpine-card max-w-md w-full p-6 sm:p-8 relative border border-sky-500/40 shadow-2xl">
-      <button onclick="closeLoginModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white font-bold text-xl transition-colors">&times;</button>
-      
+      <button onclick="closeLoginModal()"
+        class="absolute top-4 right-4 text-slate-400 hover:text-white font-bold text-xl transition-colors">&times;</button>
+
       <div class="flex items-center gap-2 mb-2">
         <span class="text-xl">⚙️</span>
         <h3 class="font-outfit font-black text-xl text-slate-900 dark:text-white tracking-wide">BASECAMP CMS LOGIN</h3>
       </div>
-      <p class="text-xs text-slate-400 mb-5">Silakan masukan kredensial akun administrator Anda untuk mengakses konsol kontrol CMS.</p>
+      <p class="text-xs text-slate-400 mb-5">Silakan masukan kredensial akun administrator Anda untuk mengakses konsol
+        kontrol CMS.</p>
 
       <form onsubmit="handleLoginSubmit(event)" class="space-y-4">
         <div>
-          <label class="block text-xs font-outfit font-bold text-slate-800 dark:text-sky-300 mb-1 uppercase">Username</label>
-          <input type="text" id="admin-user" required placeholder="Masukkan username admin..." class="w-full px-4 py-2.5 rounded-xl bg-white/80 dark:bg-slate-950/80 border border-sky-300 dark:border-sky-500/40 text-slate-900 dark:text-sky-100 text-xs focus:ring-2 focus:ring-sky-500 focus:outline-none">
+          <label
+            class="block text-xs font-outfit font-bold text-slate-800 dark:text-sky-300 mb-1 uppercase">Username</label>
+          <input type="text" id="admin-user" required placeholder="Masukkan username admin..."
+            class="w-full px-4 py-2.5 rounded-xl bg-white/80 dark:bg-slate-950/80 border border-sky-300 dark:border-sky-500/40 text-slate-900 dark:text-sky-100 text-xs focus:ring-2 focus:ring-sky-500 focus:outline-none">
         </div>
         <div>
-          <label class="block text-xs font-outfit font-bold text-slate-800 dark:text-sky-300 mb-1 uppercase">Password</label>
-          <input type="password" id="admin-pass" required placeholder="••••••••" class="w-full px-4 py-2.5 rounded-xl bg-white/80 dark:bg-slate-950/80 border border-sky-300 dark:border-sky-500/40 text-slate-900 dark:text-sky-100 text-xs focus:ring-2 focus:ring-sky-500 focus:outline-none">
+          <label
+            class="block text-xs font-outfit font-bold text-slate-800 dark:text-sky-300 mb-1 uppercase">Password</label>
+          <input type="password" id="admin-pass" required placeholder="••••••••"
+            class="w-full px-4 py-2.5 rounded-xl bg-white/80 dark:bg-slate-950/80 border border-sky-300 dark:border-sky-500/40 text-slate-900 dark:text-sky-100 text-xs focus:ring-2 focus:ring-sky-500 focus:outline-none">
         </div>
-        <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-sky-600 to-amber-500 text-white font-outfit font-extrabold text-xs rounded-xl hover:opacity-90 transition-all shadow-md">
+        <button type="submit"
+          class="w-full py-3.5 bg-gradient-to-r from-sky-600 to-amber-500 text-white font-outfit font-extrabold text-xs rounded-xl hover:opacity-90 transition-all shadow-md">
           AUTHENTICATE & MASUK CMS
         </button>
       </form>
@@ -703,13 +854,16 @@
   </div>
 
   <!-- Fullscreen Dashboard Admin CMS (Tampilan Sidebar Samping) -->
-  <div id="cms-full-dashboard" class="fixed inset-0 z-50 hidden bg-slate-950/95 backdrop-blur-2xl flex flex-col md:flex-row overflow-hidden">
-    
+  <div id="cms-full-dashboard"
+    class="fixed inset-0 z-50 hidden bg-slate-950/95 backdrop-blur-2xl flex flex-col md:flex-row overflow-hidden">
+
     <!-- Sidebar Navigasi Kiri CMS Admin -->
-    <aside class="w-full md:w-64 bg-slate-900/90 border-b md:border-b-0 md:border-r border-sky-500/30 p-4 sm:p-6 flex flex-col justify-between shrink-0">
+    <aside
+      class="w-full md:w-64 bg-slate-900/90 border-b md:border-b-0 md:border-r border-sky-500/30 p-4 sm:p-6 flex flex-col justify-between shrink-0">
       <div>
         <div class="flex items-center gap-3 mb-6 pb-4 border-b border-sky-500/20">
-          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-sky-500 to-amber-500 text-white font-black flex items-center justify-center text-xs shadow-md">
+          <div
+            class="w-9 h-9 rounded-xl bg-gradient-to-tr from-sky-500 to-amber-500 text-white font-black flex items-center justify-center text-xs shadow-md">
             CMS
           </div>
           <div>
@@ -719,38 +873,46 @@
         </div>
 
         <nav class="space-y-1 text-xs font-outfit font-bold">
-          <button onclick="switchCMSTab('messages')" id="nav-btn-messages" class="w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-sky-500/20 text-sky-300 border border-sky-500/40 transition-all">
+          <button onclick="switchCMSTab('messages')" id="nav-btn-messages"
+            class="w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-sky-500/20 text-sky-300 border border-sky-500/40 transition-all">
             <span class="flex items-center gap-2"><span>✉️</span> Pesan Masuk</span>
             <span id="inbox-count" class="px-2 py-0.5 rounded-full bg-sky-500 text-white text-[10px]">0</span>
           </button>
 
-          <button onclick="switchCMSTab('header')" id="nav-btn-header" class="w-full flex items-center gap-2 px-3.5 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-all">
+          <button onclick="switchCMSTab('header')" id="nav-btn-header"
+            class="w-full flex items-center gap-2 px-3.5 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-all">
             <span>🏔️</span> Profile Header & Bio
           </button>
 
-          <button onclick="switchCMSTab('projects')" id="nav-btn-projects" class="w-full flex items-center gap-2 px-3.5 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-all">
+          <button onclick="switchCMSTab('projects')" id="nav-btn-projects"
+            class="w-full flex items-center gap-2 px-3.5 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-all">
             <span>⛵</span> Projects & Karya
           </button>
 
-          <button onclick="switchCMSTab('hobbies')" id="nav-btn-hobbies" class="w-full flex items-center gap-2 px-3.5 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-all">
+          <button onclick="switchCMSTab('hobbies')" id="nav-btn-hobbies"
+            class="w-full flex items-center gap-2 px-3.5 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-all">
             <span>📚</span> Ketertarikan & Hobi
           </button>
 
-          <button onclick="switchCMSTab('education')" id="nav-btn-education" class="w-full flex items-center gap-2 px-3.5 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-all">
+          <button onclick="switchCMSTab('education')" id="nav-btn-education"
+            class="w-full flex items-center gap-2 px-3.5 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-all">
             <span>🧗</span> Jenjang Pendidikan
           </button>
 
-          <button onclick="switchCMSTab('reviews')" id="nav-btn-reviews" class="w-full flex items-center gap-2 px-3.5 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-all">
+          <button onclick="switchCMSTab('reviews')" id="nav-btn-reviews"
+            class="w-full flex items-center gap-2 px-3.5 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-all">
             <span>🏕️</span> Reviews & Testimoni
           </button>
         </nav>
       </div>
 
       <div class="pt-4 border-t border-slate-800 mt-4 md:mt-0 flex flex-col gap-2">
-        <button onclick="closeCMSDashboard()" class="w-full py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-sky-300 text-xs font-bold transition-all flex items-center justify-center gap-1">
+        <button onclick="closeCMSDashboard()"
+          class="w-full py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-sky-300 text-xs font-bold transition-all flex items-center justify-center gap-1">
           <span>👁️</span> Lihat Tampilan Depan
         </button>
-        <button onclick="logoutCMS()" class="w-full py-2.5 px-3 rounded-xl bg-red-500/20 hover:bg-red-500/30 text-red-400 border border-red-500/40 text-xs font-bold transition-all flex items-center justify-center gap-1">
+        <button onclick="logoutCMS()"
+          class="w-full py-2.5 px-3 rounded-xl bg-red-500/20 hover:bg-red-500/30 text-red-400 border border-red-500/40 text-xs font-bold transition-all flex items-center justify-center gap-1">
           <span>🚪</span> Logout Admin
         </button>
       </div>
@@ -765,9 +927,11 @@
           <div class="flex items-center justify-between pb-3 border-b border-sky-500/30">
             <div>
               <h2 class="font-outfit font-black text-xl text-white">PESAN MASUK BASECAMP</h2>
-              <p class="text-xs text-slate-400">Daftar semua pesan sopan yang dikirimkan oleh pengunjung portofolio Anda.</p>
+              <p class="text-xs text-slate-400">Daftar semua pesan sopan yang dikirimkan oleh pengunjung portofolio
+                Anda.</p>
             </div>
-            <button onclick="resetBanStatus()" class="px-3 py-1.5 bg-amber-500/20 text-amber-300 border border-amber-500/40 rounded-xl text-xs font-bold hover:bg-amber-500/30 transition-all">
+            <button onclick="resetBanStatus()"
+              class="px-3 py-1.5 bg-amber-500/20 text-amber-300 border border-amber-500/40 rounded-xl text-xs font-bold hover:bg-amber-500/30 transition-all">
               🔓 RESET STATUS BLOKIR PENGGUNA
             </button>
           </div>
@@ -781,23 +945,28 @@
         <div id="cms-tab-header" class="hidden space-y-4">
           <div class="pb-3 border-b border-sky-500/30">
             <h2 class="font-outfit font-black text-xl text-white">PENGATURAN PROFILE HEADER</h2>
-            <p class="text-xs text-slate-400">Atur teks status, salam pembuka, dan bio singkat pada kartu profil depan.</p>
+            <p class="text-xs text-slate-400">Atur teks status, salam pembuka, dan bio singkat pada kartu profil depan.
+            </p>
           </div>
 
           <div class="space-y-4 alpine-card p-6 border border-sky-500/30">
             <div>
               <label class="block text-xs font-bold text-sky-300 mb-1.5 uppercase">Status Banner Basecamp</label>
-              <input type="text" id="cms-input-status" class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-sky-500/30 text-xs text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+              <input type="text" id="cms-input-status"
+                class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-sky-500/30 text-xs text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
             </div>
             <div>
               <label class="block text-xs font-bold text-sky-300 mb-1.5 uppercase">Greeting Text Pembuka</label>
-              <input type="text" id="cms-input-greeting" class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-sky-500/30 text-xs text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
+              <input type="text" id="cms-input-greeting"
+                class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-sky-500/30 text-xs text-white focus:outline-none focus:ring-2 focus:ring-sky-500">
             </div>
             <div>
               <label class="block text-xs font-bold text-sky-300 mb-1.5 uppercase">Bio Ringkas Profil</label>
-              <textarea id="cms-input-bio" rows="4" class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-sky-500/30 text-xs text-white focus:outline-none focus:ring-2 focus:ring-sky-500"></textarea>
+              <textarea id="cms-input-bio" rows="4"
+                class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-sky-500/30 text-xs text-white focus:outline-none focus:ring-2 focus:ring-sky-500"></textarea>
             </div>
-            <button onclick="saveCMSProfile()" class="py-3 px-6 bg-emerald-600 hover:bg-emerald-500 text-white font-outfit font-bold text-xs rounded-xl transition-all shadow-lg">
+            <button onclick="saveCMSProfile()"
+              class="py-3 px-6 bg-emerald-600 hover:bg-emerald-500 text-white font-outfit font-bold text-xs rounded-xl transition-all shadow-lg">
               SIMPAN PERUBAHAN PROFIL
             </button>
           </div>
@@ -810,7 +979,8 @@
               <h2 class="font-outfit font-black text-xl text-white">KELOLA PROJECTS & KARYA</h2>
               <p class="text-xs text-slate-400">Kelola daftar karya, tautan ICT, serta keterangan foto proyek.</p>
             </div>
-            <button onclick="addNewProjectCMS()" class="px-3.5 py-2 bg-sky-600 hover:bg-sky-500 text-white rounded-xl text-xs font-bold transition-all">
+            <button onclick="addNewProjectCMS()"
+              class="px-3.5 py-2 bg-sky-600 hover:bg-sky-500 text-white rounded-xl text-xs font-bold transition-all">
               + TAMBAH KARYA BARU
             </button>
           </div>
@@ -825,9 +995,11 @@
           <div class="flex items-center justify-between pb-3 border-b border-sky-500/30">
             <div>
               <h2 class="font-outfit font-black text-xl text-white">KELOLA KETERTARIKAN & HOBI</h2>
-              <p class="text-xs text-slate-400">Atur daftar hobi dan bidang minat (Literatur & Teknologi) pada halaman portofolio.</p>
+              <p class="text-xs text-slate-400">Atur daftar hobi dan bidang minat (Literatur & Teknologi) pada halaman
+                portofolio.</p>
             </div>
-            <button onclick="addNewHobbyCMS()" class="px-3.5 py-2 bg-amber-600 hover:bg-amber-500 text-white rounded-xl text-xs font-bold transition-all">
+            <button onclick="addNewHobbyCMS()"
+              class="px-3.5 py-2 bg-amber-600 hover:bg-amber-500 text-white rounded-xl text-xs font-bold transition-all">
               + TAMBAH HOBI BARU
             </button>
           </div>
@@ -839,9 +1011,15 @@
 
         <!-- Tab 4: Managing Education -->
         <div id="cms-tab-education" class="hidden space-y-4">
-          <div class="pb-3 border-b border-sky-500/30">
-            <h2 class="font-outfit font-black text-xl text-white">KELOLA JENJANG PENDIDIKAN</h2>
-            <p class="text-xs text-slate-400">Atur riwayat pendidikan formal dari TK hingga SMP saat ini.</p>
+          <div class="flex items-center justify-between pb-3 border-b border-sky-500/30">
+            <div>
+              <h2 class="font-outfit font-black text-xl text-white">KELOLA JENJANG PENDIDIKAN</h2>
+              <p class="text-xs text-slate-400">Atur riwayat pendidikan formal dari TK hingga SMP saat ini.</p>
+            </div>
+            <button onclick="addNewEducationCMS()"
+              class="px-3.5 py-2 bg-amber-600 hover:bg-amber-500 text-white rounded-xl text-xs font-bold transition-all">
+              + TAMBAH JENJANG
+            </button>
           </div>
 
           <div id="cms-education-editor" class="space-y-4">
@@ -851,9 +1029,15 @@
 
         <!-- Tab 5: Managing Reviews -->
         <div id="cms-tab-reviews" class="hidden space-y-4">
-          <div class="pb-3 border-b border-sky-500/30">
-            <h2 class="font-outfit font-black text-xl text-white">KELOLA REVIEWS & TESTIMONI</h2>
-            <p class="text-xs text-slate-400">Atur masukan dan ulasan dari pembimbing serta rekan akademis.</p>
+          <div class="flex items-center justify-between pb-3 border-b border-sky-500/30">
+            <div>
+              <h2 class="font-outfit font-black text-xl text-white">KELOLA REVIEWS & TESTIMONI</h2>
+              <p class="text-xs text-slate-400">Atur masukan dan ulasan dari pembimbing serta rekan akademis.</p>
+            </div>
+            <button onclick="addNewReviewCMS()"
+              class="px-3.5 py-2 bg-sky-600 hover:bg-sky-500 text-white rounded-xl text-xs font-bold transition-all">
+              + TAMBAH ULASAN
+            </button>
           </div>
 
           <div id="cms-reviews-editor" class="space-y-4">
@@ -866,12 +1050,14 @@
   </div>
 
   <!-- Footer Publik -->
-  <footer class="mt-16 border-t border-sky-500/20 py-8 text-center text-xs text-slate-400 font-sans backdrop-blur-md bg-slate-950/40">
+  <footer
+    class="mt-16 border-t border-sky-500/20 py-8 text-center text-xs text-slate-400 font-sans backdrop-blur-md bg-slate-950/40">
     <p>© 2026 Jason Rafael Gunawan. All Rights Reserved. Built with Alpine Peak Theme & Pure Web Standards.</p>
   </footer>
 
   <!-- Toast Notifikasi Custom -->
-  <div id="toast-notify" class="fixed bottom-5 right-5 z-50 hidden max-w-sm px-4 py-3 rounded-2xl bg-slate-900 border border-sky-500 text-sky-200 text-xs font-bold shadow-2xl items-center gap-3">
+  <div id="toast-notify"
+    class="fixed bottom-5 right-5 z-50 hidden max-w-sm px-4 py-3 rounded-2xl bg-slate-900 border border-sky-500 text-sky-200 text-xs font-bold shadow-2xl items-center gap-3">
     <span id="toast-icon">✨</span>
     <span id="toast-msg">Notifikasi...</span>
   </div>
@@ -964,18 +1150,60 @@
         renderAdminMessages();
 
         subscribeToPortfolioKey('profile', syncProfileFromFirebase, () => {
-          if (document.getElementById('cms-full-dashboard').classList.contains('flex')) {
-            document.getElementById('cms-input-status').value = document.getElementById('display-status').innerText;
-            document.getElementById('cms-input-greeting').value = document.getElementById('display-greeting').innerText;
-            document.getElementById('cms-input-bio').value = document.getElementById('display-bio').innerText;
+          if (document.getElementById('cms-full-dashboard')?.classList.contains('flex')) {
+            const activeEl = document.activeElement;
+            if (activeEl !== document.getElementById('cms-input-status')) {
+              document.getElementById('cms-input-status').value = document.getElementById('display-status').innerText;
+            }
+            if (activeEl !== document.getElementById('cms-input-greeting')) {
+              document.getElementById('cms-input-greeting').value = document.getElementById('display-greeting').innerText;
+            }
+            if (activeEl !== document.getElementById('cms-input-bio')) {
+              document.getElementById('cms-input-bio').value = document.getElementById('display-bio').innerText;
+            }
           }
         });
 
-        subscribeToPortfolioKey('hobbies', (data) => { hobbiesData = data || hobbiesData; renderHobbies(); renderCMSHobbiesEditor(); }, null);
-        subscribeToPortfolioKey('projects', (data) => { projectsData = data || projectsData; renderProjects(); renderCMSProjectsEditor(); }, null);
-        subscribeToPortfolioKey('education', (data) => { educationData = data || educationData; renderEducation(); renderCMSEducationEditor(); }, null);
-        subscribeToPortfolioKey('reviews', (data) => { reviewsData = data || reviewsData; renderReviews(); renderCMSReviewsEditor(); }, null);
-        subscribeToPortfolioKey('messages', (data) => { basecampMessages = data || basecampMessages; renderAdminMessages(); }, null);
+        subscribeToPortfolioKey('hobbies', (data) => {
+          hobbiesData = data || hobbiesData;
+          renderHobbies();
+          const activeEl = document.activeElement;
+          if (!activeEl || !document.getElementById('cms-hobbies-editor')?.contains(activeEl)) {
+            renderCMSHobbiesEditor();
+          }
+        }, null);
+
+        subscribeToPortfolioKey('projects', (data) => {
+          projectsData = data || projectsData;
+          renderProjects();
+          const activeEl = document.activeElement;
+          if (!activeEl || !document.getElementById('cms-projects-editor')?.contains(activeEl)) {
+            renderCMSProjectsEditor();
+          }
+        }, null);
+
+        subscribeToPortfolioKey('education', (data) => {
+          educationData = data || educationData;
+          renderEducation();
+          const activeEl = document.activeElement;
+          if (!activeEl || !document.getElementById('cms-education-editor')?.contains(activeEl)) {
+            renderCMSEducationEditor();
+          }
+        }, null);
+
+        subscribeToPortfolioKey('reviews', (data) => {
+          reviewsData = data || reviewsData;
+          renderReviews();
+          const activeEl = document.activeElement;
+          if (!activeEl || !document.getElementById('cms-reviews-editor')?.contains(activeEl)) {
+            renderCMSReviewsEditor();
+          }
+        }, null);
+
+        subscribeToPortfolioKey('messages', (data) => {
+          basecampMessages = data || basecampMessages;
+          renderAdminMessages();
+        }, null);
       } catch (error) {
         console.error('Terjadi kesalahan saat inisialisasi Firebase:', error);
       }
@@ -1023,41 +1251,41 @@
     ];
 
     let projectsData = [
-      { 
-        title: 'ICT CodeHub Student Tasks', 
-        desc: 'Platform utama pengerjaan dan pengumpulan tugas pemrograman web interaktif terintegrasi dengan akun siswa.', 
-        tech: ['Interactive Web', 'ICT Task', 'Assignment'], 
-        icon: '💻', 
+      {
+        title: 'ICT CodeHub Student Tasks',
+        desc: 'Platform utama pengerjaan dan pengumpulan tugas pemrograman web interaktif terintegrasi dengan akun siswa.',
+        tech: ['Interactive Web', 'ICT Task', 'Assignment'],
+        icon: '💻',
         img: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80',
         caption: 'Antarmuka pengerjaan tugas ICT digital interaktif.',
-        link: 'https://ictcodehub.web.id/student/tasks?task=ScsRVxKCA9XoYeBkAA4x' 
+        link: 'https://ictcodehub.web.id/student/tasks?task=ScsRVxKCA9XoYeBkAA4x'
       },
-      { 
-        title: 'YouTube Channel - Mountain & Code', 
-        desc: 'Saluran resmi YouTube seputar dokumentasi perjalanan pendakian gunung, tutorial coding, dan wawasan teknologi.', 
-        tech: ['Video Content', 'Vlog', 'Tutorials'], 
-        icon: '🎥', 
+      {
+        title: 'YouTube Channel - Mountain & Code',
+        desc: 'Saluran resmi YouTube seputar dokumentasi perjalanan pendakian gunung, tutorial coding, dan wawasan teknologi.',
+        tech: ['Video Content', 'Vlog', 'Tutorials'],
+        icon: '🎥',
         img: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fit=crop&w=600&q=80',
         caption: 'Kanal YouTube tempat membagikan karya visual dan video petualangan.',
-        link: 'https://youtube.com' 
+        link: 'https://youtube.com'
       },
-      { 
-        title: 'X (Twitter) - Tech & Alpine Microblog', 
-        desc: 'Akun X resmi untuk berbagi ulasan singkat seputar web development, kabar proyek terbaru, dan catatan harian pendaki.', 
-        tech: ['Microblog', 'Tech News', 'Community'], 
-        icon: '𝕏', 
+      {
+        title: 'X (Twitter) - Tech & Alpine Microblog',
+        desc: 'Akun X resmi untuk berbagi ulasan singkat seputar web development, kabar proyek terbaru, dan catatan harian pendaki.',
+        tech: ['Microblog', 'Tech News', 'Community'],
+        icon: '𝕏',
         img: 'https://images.unsplash.com/photo-1611605698335-8b1569810432?auto=format&fit=crop&w=600&q=80',
         caption: 'Linimasa X untuk berdiskusi dengan komunitas pengembang dan pendaki.',
-        link: 'https://x.com' 
+        link: 'https://x.com'
       },
-      { 
-        title: 'Instagram - Visual Journey & Portfolio', 
-        desc: 'Galeri foto estetis momen puncak gunung, cuplikan antarmuka karya, serta rutinitas harian di basecamp.', 
-        tech: ['Photography', 'UI Design', 'Visual Gallery'], 
-        icon: '📸', 
+      {
+        title: 'Instagram - Visual Journey & Portfolio',
+        desc: 'Galeri foto estetis momen puncak gunung, cuplikan antarmuka karya, serta rutinitas harian di basecamp.',
+        tech: ['Photography', 'UI Design', 'Visual Gallery'],
+        icon: '📸',
         img: 'https://images.unsplash.com/photo-1611262588024-d12430b98920?auto=format&fit=crop&w=600&q=80',
         caption: 'Dokumentasi foto perjalanan outdoor dan desain grafis di Instagram.',
-        link: 'https://instagram.com' 
+        link: 'https://instagram.com'
       }
     ];
 
@@ -1146,7 +1374,7 @@
     // Penanganan Formulir Pesan Depan
     async function handleCollabSubmit(event) {
       event.preventDefault();
-      
+
       if (isBanned) {
         showToast('🔒 Akses diblokir karena melanggar aturan 3 kali.');
         return;
@@ -1176,10 +1404,10 @@
         }
       } else {
         warningEl.classList.add('hidden');
-        
+
         const now = new Date();
         const dateStr = now.toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric' }) + `, ` + now.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
-        
+
         basecampMessages.unshift({ name, email, msg: message, time: dateStr });
         renderAdminMessages();
         await saveToFirebase('messages', basecampMessages);
@@ -1202,13 +1430,13 @@
     }
 
     // Modal Login Admin & Fullscreen CMS Sidebar Navigation
-    function openLoginModal() { 
-      document.getElementById('login-modal').classList.remove('hidden'); 
-      document.getElementById('login-modal').classList.add('flex'); 
+    function openLoginModal() {
+      document.getElementById('login-modal').classList.remove('hidden');
+      document.getElementById('login-modal').classList.add('flex');
     }
-    function closeLoginModal() { 
-      document.getElementById('login-modal').classList.add('hidden'); 
-      document.getElementById('login-modal').classList.remove('flex'); 
+    function closeLoginModal() {
+      document.getElementById('login-modal').classList.add('hidden');
+      document.getElementById('login-modal').classList.remove('flex');
     }
 
     function handleLoginSubmit(e) {
@@ -1228,7 +1456,7 @@
     function openCMSDashboard() {
       document.getElementById('cms-full-dashboard').classList.remove('hidden');
       document.getElementById('cms-full-dashboard').classList.add('flex');
-      
+
       // Populate inputs
       document.getElementById('cms-input-status').value = document.getElementById('display-status').innerText;
       document.getElementById('cms-input-greeting').value = document.getElementById('display-greeting').innerText;
@@ -1256,11 +1484,11 @@
     // Sidebar Tab Switcher Logic
     function switchCMSTab(tabName) {
       const tabs = ['messages', 'header', 'projects', 'hobbies', 'education', 'reviews'];
-      
+
       tabs.forEach(t => {
         const tabEl = document.getElementById(`cms-tab-${t}`);
         const btnEl = document.getElementById(`nav-btn-${t}`);
-        
+
         if (t === tabName) {
           tabEl.classList.remove('hidden');
           btnEl.className = "w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl bg-sky-500/20 text-sky-300 border border-sky-500/40 transition-all font-bold";
@@ -1304,39 +1532,67 @@
       showToast(`🗑️ Pesan dari ${removed[0]?.name || 'pengguna'} berhasil dihapus!`);
     }
 
+    function escapeAttr(str) {
+      if (str === null || str === undefined) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;');
+    }
+
+    // CMS Hobbies Handlers & Auto-Save
     function renderCMSHobbiesEditor() {
       const container = document.getElementById('cms-hobbies-editor');
+      if (!container) return;
+      if (hobbiesData.length === 0) {
+        container.innerHTML = `<p class="text-xs text-slate-400 italic">Belum ada data hobi. Klik "+ TAMBAH HOBI BARU" di atas untuk menambahkan.</p>`;
+        return;
+      }
       container.innerHTML = hobbiesData.map((h, idx) => `
         <div class="alpine-card p-5 border border-sky-500/30 space-y-3">
-          <div class="flex justify-between items-center">
+          <div class="flex justify-between items-center pb-2 border-b border-sky-500/20">
             <span class="text-xs font-bold text-amber-400 uppercase">Hobi / Ketertarikan #${idx + 1}</span>
-            <button onclick="deleteHobbyCMS(${idx})" class="px-2.5 py-1 rounded-lg bg-red-500/20 hover:bg-red-500/30 text-red-300 border border-red-500/40 text-[10px] font-bold transition-all">
+            <button onclick="deleteHobbyCMS(${idx})" class="px-2.5 py-1 rounded-lg bg-red-500/20 hover:bg-red-500/30 text-red-300 border border-red-500/40 text-[10px] font-bold transition-all flex items-center gap-1">
               🗑️ Hapus Hobi
             </button>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
             <div>
               <label class="block text-[11px] text-slate-400 mb-1">Kategori (Literatur / Teknologi)</label>
-              <select onchange="hobbiesData[${idx}].category=this.value; renderHobbies();" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white">
+              <select onchange="updateHobbyField(${idx}, 'category', this.value)" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:border-sky-500 focus:outline-none">
                 <option value="Literatur" ${h.category === 'Literatur' ? 'selected' : ''}>Literatur</option>
                 <option value="Teknologi" ${h.category === 'Teknologi' ? 'selected' : ''}>Teknologi</option>
               </select>
             </div>
             <div>
               <label class="block text-[11px] text-slate-400 mb-1">Judul Hobi / Minat</label>
-              <input type="text" value="${h.title}" onchange="hobbiesData[${idx}].title=this.value; renderHobbies();" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white">
+              <input type="text" value="${escapeAttr(h.title || '')}" onchange="updateHobbyField(${idx}, 'title', this.value)" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:border-sky-500 focus:outline-none">
             </div>
             <div>
               <label class="block text-[11px] text-slate-400 mb-1">Ikon Emoji</label>
-              <input type="text" value="${h.icon}" onchange="hobbiesData[${idx}].icon=this.value; renderHobbies();" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white">
+              <input type="text" value="${escapeAttr(h.icon || '')}" onchange="updateHobbyField(${idx}, 'icon', this.value)" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:border-sky-500 focus:outline-none">
             </div>
           </div>
           <div>
             <label class="block text-[11px] text-slate-400 mb-1">Deskripsi Hobi</label>
-            <textarea onchange="hobbiesData[${idx}].desc=this.value; renderHobbies();" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white" rows="2">${h.desc}</textarea>
+            <textarea onchange="updateHobbyField(${idx}, 'desc', this.value)" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:border-sky-500 focus:outline-none" rows="2">${escapeAttr(h.desc || '')}</textarea>
           </div>
         </div>
       `).join('');
+    }
+
+    async function updateHobbyField(idx, field, value) {
+      if (!hobbiesData[idx]) return;
+      hobbiesData[idx][field] = value;
+      renderHobbies();
+      const saved = await saveToFirebase('hobbies', hobbiesData);
+      if (saved) {
+        showToast('💾 Perubahan hobi tersimpan ke Firebase!');
+      } else {
+        showToast('⚠️ Gagal menyimpan hobi ke Firebase.');
+      }
     }
 
     async function addNewHobbyCMS() {
@@ -1349,108 +1605,152 @@
       renderHobbies();
       renderCMSHobbiesEditor();
       await saveToFirebase('hobbies', hobbiesData);
-      showToast('✨ Hobi baru berhasil ditambahkan dan disimpan!');
+      showToast('✨ Hobi baru berhasil ditambahkan dan disimpan ke Firebase!');
     }
 
     async function deleteHobbyCMS(idx) {
+      if (!confirm('Apakah Anda yakin ingin menghapus hobi ini?')) return;
       hobbiesData.splice(idx, 1);
       renderHobbies();
       renderCMSHobbiesEditor();
       await saveToFirebase('hobbies', hobbiesData);
-      showToast('🗑️ Hobi berhasil dihapus!');
+      showToast('🗑️ Hobi berhasil dihapus dari Firebase!');
     }
 
+    // CMS Education Handlers & Auto-Save
     function renderCMSEducationEditor() {
       const container = document.getElementById('cms-education-editor');
       if (!container) return;
+      if (educationData.length === 0) {
+        container.innerHTML = `<p class="text-xs text-slate-400 italic">Belum ada jenjang pendidikan. Klik "+ TAMBAH JENJANG" di atas untuk menambahkan.</p>`;
+        return;
+      }
       container.innerHTML = educationData.map((e, idx) => `
         <div class="alpine-card p-5 border border-sky-500/30 space-y-3">
-          <div class="flex justify-between items-center">
+          <div class="flex justify-between items-center pb-2 border-b border-sky-500/20">
             <span class="text-xs font-bold text-amber-400 uppercase">Jenjang #${idx + 1}</span>
+            <button onclick="deleteEducationCMS(${idx})" class="px-2.5 py-1 rounded-lg bg-red-500/20 hover:bg-red-500/30 text-red-300 border border-red-500/40 text-[10px] font-bold transition-all flex items-center gap-1">
+              🗑️ Hapus Jenjang
+            </button>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label class="block text-[11px] text-slate-400 mb-1">Tingkat / Jenjang</label>
-              <input type="text" value="${e.stage}" onchange="educationData[${idx}].stage=this.value; renderEducation();" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white">
+              <input type="text" value="${escapeAttr(e.stage || '')}" onchange="updateEducationField(${idx}, 'stage', this.value)" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:border-sky-500 focus:outline-none">
             </div>
             <div>
               <label class="block text-[11px] text-slate-400 mb-1">Nama Sekolah</label>
-              <input type="text" value="${e.school}" onchange="educationData[${idx}].school=this.value; renderEducation();" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white">
+              <input type="text" value="${escapeAttr(e.school || '')}" onchange="updateEducationField(${idx}, 'school', this.value)" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:border-sky-500 focus:outline-none">
             </div>
           </div>
           <div>
             <label class="block text-[11px] text-slate-400 mb-1">Periode Tahun</label>
-            <input type="text" value="${e.period}" onchange="educationData[${idx}].period=this.value; renderEducation();" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white">
+            <input type="text" value="${escapeAttr(e.period || '')}" onchange="updateEducationField(${idx}, 'period', this.value)" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:border-sky-500 focus:outline-none">
           </div>
           <div>
             <label class="block text-[11px] text-slate-400 mb-1">Deskripsi</label>
-            <textarea onchange="educationData[${idx}].desc=this.value; renderEducation();" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white" rows="2">${e.desc}</textarea>
+            <textarea onchange="updateEducationField(${idx}, 'desc', this.value)" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:border-sky-500 focus:outline-none" rows="2">${escapeAttr(e.desc || '')}</textarea>
           </div>
         </div>
       `).join('');
     }
 
+    async function updateEducationField(idx, field, value) {
+      if (!educationData[idx]) return;
+      educationData[idx][field] = value;
+      renderEducation();
+      const saved = await saveToFirebase('education', educationData);
+      if (saved) {
+        showToast('💾 Perubahan jenjang pendidikan tersimpan ke Firebase!');
+      } else {
+        showToast('⚠️ Gagal menyimpan pendidikan ke Firebase.');
+      }
+    }
+
+    async function addNewEducationCMS() {
+      educationData.push({
+        stage: 'Jenjang Pendidikan Baru',
+        school: 'Nama Sekolah / Institusi',
+        period: '2026 - Sekarang',
+        desc: 'Deskripsi singkat seputar kegiatan atau fokus pembelajaran.'
+      });
+      renderEducation();
+      renderCMSEducationEditor();
+      await saveToFirebase('education', educationData);
+      showToast('✨ Jenjang pendidikan baru berhasil ditambahkan dan disimpan!');
+    }
+
+    async function deleteEducationCMS(idx) {
+      if (!confirm('Apakah Anda yakin ingin menghapus jenjang pendidikan ini?')) return;
+      educationData.splice(idx, 1);
+      renderEducation();
+      renderCMSEducationEditor();
+      await saveToFirebase('education', educationData);
+      showToast('🗑️ Jenjang pendidikan berhasil dihapus dari Firebase!');
+    }
+
+    // CMS Projects Handlers & Auto-Save
     function renderCMSProjectsEditor() {
       const container = document.getElementById('cms-projects-editor');
       if (!container) return;
+      if (projectsData.length === 0) {
+        container.innerHTML = `<p class="text-xs text-slate-400 italic">Belum ada karya proyek. Klik "+ TAMBAH KARYA BARU" di atas untuk menambahkan.</p>`;
+        return;
+      }
       container.innerHTML = projectsData.map((p, idx) => `
         <div class="alpine-card p-5 border border-sky-500/30 space-y-3">
-          <div class="flex justify-between items-center">
+          <div class="flex justify-between items-center pb-2 border-b border-sky-500/20">
             <span class="text-xs font-bold text-sky-400 uppercase">Karya Proyek #${idx + 1}</span>
+            <button onclick="deleteProjectCMS(${idx})" class="px-2.5 py-1 rounded-lg bg-red-500/20 hover:bg-red-500/30 text-red-300 border border-red-500/40 text-[10px] font-bold transition-all flex items-center gap-1">
+              🗑️ Hapus Karya
+            </button>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label class="block text-[11px] text-slate-400 mb-1">Judul Karya / Platform</label>
-              <input type="text" value="${p.title}" onchange="projectsData[${idx}].title=this.value; renderProjects();" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white">
+              <input type="text" value="${escapeAttr(p.title || '')}" onchange="updateProjectField(${idx}, 'title', this.value)" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:border-sky-500 focus:outline-none">
             </div>
             <div>
               <label class="block text-[11px] text-slate-400 mb-1">URL / Link Tujuan Karya</label>
-              <input type="text" value="${p.link}" onchange="projectsData[${idx}].link=this.value; renderProjects();" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white">
+              <input type="text" value="${escapeAttr(p.link || '')}" onchange="updateProjectField(${idx}, 'link', this.value)" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:border-sky-500 focus:outline-none">
             </div>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
               <label class="block text-[11px] text-slate-400 mb-1">URL Gambar Pratinjau</label>
-              <input type="text" value="${p.img}" onchange="projectsData[${idx}].img=this.value; renderProjects();" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white">
+              <input type="text" value="${escapeAttr(p.img || '')}" onchange="updateProjectField(${idx}, 'img', this.value)" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:border-sky-500 focus:outline-none">
             </div>
             <div>
               <label class="block text-[11px] text-slate-400 mb-1">Ikon / Emoji Platform</label>
-              <input type="text" value="${p.icon}" onchange="projectsData[${idx}].icon=this.value; renderProjects();" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white">
+              <input type="text" value="${escapeAttr(p.icon || '')}" onchange="updateProjectField(${idx}, 'icon', this.value)" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:border-sky-500 focus:outline-none">
             </div>
           </div>
           <div>
             <label class="block text-[11px] text-slate-400 mb-1">Keterangan Foto (Caption)</label>
-            <input type="text" value="${p.caption}" onchange="projectsData[${idx}].caption=this.value; renderProjects();" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white">
+            <input type="text" value="${escapeAttr(p.caption || '')}" onchange="updateProjectField(${idx}, 'caption', this.value)" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:border-sky-500 focus:outline-none">
           </div>
           <div>
             <label class="block text-[11px] text-slate-400 mb-1">Deskripsi Karya</label>
-            <textarea onchange="projectsData[${idx}].desc=this.value; renderProjects();" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white" rows="2">${p.desc}</textarea>
+            <textarea onchange="updateProjectField(${idx}, 'desc', this.value)" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:border-sky-500 focus:outline-none" rows="2">${escapeAttr(p.desc || '')}</textarea>
           </div>
         </div>
       `).join('');
     }
 
-    function renderCMSReviewsEditor() {
-      const container = document.getElementById('cms-reviews-editor');
-      if (!container) return;
-      container.innerHTML = reviewsData.map((r, idx) => `
-        <div class="alpine-card p-5 border border-sky-500/30 space-y-3">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div>
-              <label class="block text-[11px] text-slate-400 mb-1">Nama Pemberi Ulasan</label>
-              <input type="text" value="${r.name}" onchange="reviewsData[${idx}].name=this.value; renderReviews();" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white">
-            </div>
-            <div>
-              <label class="block text-[11px] text-slate-400 mb-1">Peran / Jabatan</label>
-              <input type="text" value="${r.role}" onchange="reviewsData[${idx}].role=this.value; renderReviews();" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white">
-            </div>
-          </div>
-          <div>
-            <label class="block text-[11px] text-slate-400 mb-1">Isi Testimoni</label>
-            <textarea onchange="reviewsData[${idx}].text=this.value; renderReviews();" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white" rows="2">${r.text}</textarea>
-          </div>
-        </div>
-      `).join('');
+    async function updateProjectField(idx, field, value) {
+      if (!projectsData[idx]) return;
+      if (field === 'tech') {
+        projectsData[idx].tech = value.split(',').map(s => s.trim()).filter(Boolean);
+      } else {
+        projectsData[idx][field] = value;
+      }
+      renderProjects();
+      const saved = await saveToFirebase('projects', projectsData);
+      if (saved) {
+        showToast('💾 Perubahan karya proyek tersimpan ke Firebase!');
+      } else {
+        showToast('⚠️ Gagal menyimpan karya proyek ke Firebase.');
+      }
     }
 
     async function addNewProjectCMS() {
@@ -1466,7 +1766,84 @@
       renderProjects();
       renderCMSProjectsEditor();
       await saveToFirebase('projects', projectsData);
-      showToast('✨ Proyek baru berhasil ditambahkan dan disimpan!');
+      showToast('✨ Proyek baru berhasil ditambahkan dan disimpan ke Firebase!');
+    }
+
+    async function deleteProjectCMS(idx) {
+      if (!confirm('Apakah Anda yakin ingin menghapus karya proyek ini?')) return;
+      projectsData.splice(idx, 1);
+      renderProjects();
+      renderCMSProjectsEditor();
+      await saveToFirebase('projects', projectsData);
+      showToast('🗑️ Proyek berhasil dihapus dari Firebase!');
+    }
+
+    // CMS Reviews Handlers & Auto-Save
+    function renderCMSReviewsEditor() {
+      const container = document.getElementById('cms-reviews-editor');
+      if (!container) return;
+      if (reviewsData.length === 0) {
+        container.innerHTML = `<p class="text-xs text-slate-400 italic">Belum ada ulasan. Klik "+ TAMBAH ULASAN" di atas untuk menambahkan.</p>`;
+        return;
+      }
+      container.innerHTML = reviewsData.map((r, idx) => `
+        <div class="alpine-card p-5 border border-sky-500/30 space-y-3">
+          <div class="flex justify-between items-center pb-2 border-b border-sky-500/20">
+            <span class="text-xs font-bold text-sky-400 uppercase">Ulasan #${idx + 1}</span>
+            <button onclick="deleteReviewCMS(${idx})" class="px-2.5 py-1 rounded-lg bg-red-500/20 hover:bg-red-500/30 text-red-300 border border-red-500/40 text-[10px] font-bold transition-all flex items-center gap-1">
+              🗑️ Hapus Ulasan
+            </button>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-[11px] text-slate-400 mb-1">Nama Pemberi Ulasan</label>
+              <input type="text" value="${escapeAttr(r.name || '')}" onchange="updateReviewField(${idx}, 'name', this.value)" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:border-sky-500 focus:outline-none">
+            </div>
+            <div>
+              <label class="block text-[11px] text-slate-400 mb-1">Peran / Jabatan</label>
+              <input type="text" value="${escapeAttr(r.role || '')}" onchange="updateReviewField(${idx}, 'role', this.value)" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:border-sky-500 focus:outline-none">
+            </div>
+          </div>
+          <div>
+            <label class="block text-[11px] text-slate-400 mb-1">Isi Testimoni</label>
+            <textarea onchange="updateReviewField(${idx}, 'text', this.value)" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:border-sky-500 focus:outline-none" rows="2">${escapeAttr(r.text || '')}</textarea>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    async function updateReviewField(idx, field, value) {
+      if (!reviewsData[idx]) return;
+      reviewsData[idx][field] = value;
+      renderReviews();
+      const saved = await saveToFirebase('reviews', reviewsData);
+      if (saved) {
+        showToast('💾 Perubahan ulasan tersimpan ke Firebase!');
+      } else {
+        showToast('⚠️ Gagal menyimpan ulasan ke Firebase.');
+      }
+    }
+
+    async function addNewReviewCMS() {
+      reviewsData.push({
+        name: 'Nama Pemberi Ulasan',
+        role: 'Peran / Hubungan',
+        text: 'Tuliskan tanggapan, testimoni, atau ulasan positif di sini.',
+        rating: '⭐⭐⭐⭐⭐'
+      });
+      renderReviews();
+      renderCMSReviewsEditor();
+      await saveToFirebase('reviews', reviewsData);
+      showToast('✨ Ulasan baru berhasil ditambahkan dan disimpan ke Firebase!');
+    }
+
+    async function deleteReviewCMS(idx) {
+      if (!confirm('Apakah Anda yakin ingin menghapus ulasan ini?')) return;
+      reviewsData.splice(idx, 1);
+      renderReviews();
+      renderCMSReviewsEditor();
+      await saveToFirebase('reviews', reviewsData);
+      showToast('🗑️ Ulasan berhasil dihapus dari Firebase!');
     }
 
     function resetBanStatus() {
@@ -1625,4 +2002,5 @@
   </script>
 
 </body>
+
 </html>
